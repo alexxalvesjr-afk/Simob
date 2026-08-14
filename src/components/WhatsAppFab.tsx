@@ -44,15 +44,15 @@ export default function WhatsAppFab() {
               >
                 <button
                   onClick={() => setConvite(false)}
-                  className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-ink-600 text-cream-300"
+                  className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-paper-3 text-ink-500"
                   aria-label="Fechar convite"
                 >
                   <X size={12} />
                 </button>
-                <p className="text-sm leading-snug text-cream-100">
+                <p className="text-sm leading-snug text-ink-800">
                   Ficou com dúvida? Fale direto com um despachante.
                 </p>
-                <p className="mt-1 text-xs text-cream-300/60">
+                <p className="mt-1 text-xs text-ink-400">
                   {empresa.contato.whatsappLabel}
                 </p>
               </motion.div>

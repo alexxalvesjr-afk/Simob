@@ -53,12 +53,12 @@ export default function ConsultoriaPage() {
                 href={whatsappLink(`Olá! Tenho interesse em: ${s.titulo}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7 transition-all duration-500 hover:border-gold-500/32 hover:bg-ink-700/50"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40 hover:bg-paper-2"
               >
                 <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gold-500/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className="relative flex items-start justify-between gap-3">
-                  <h3 className="font-display text-lg font-bold leading-snug text-cream-50">
+                  <h3 className="font-display text-lg font-bold leading-snug text-ink-900">
                     {s.titulo}
                   </h3>
                   <ArrowUpRight
@@ -67,11 +67,11 @@ export default function ConsultoriaPage() {
                   />
                 </div>
 
-                <p className="relative mt-3 flex-1 leading-relaxed text-cream-300/68">
+                <p className="relative mt-3 flex-1 leading-relaxed text-ink-500">
                   {s.texto}
                 </p>
 
-                <span className="relative mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-500/10 px-3 py-1.5 text-xs font-semibold text-gold-300">
+                <span className="relative mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-500/10 px-3 py-1.5 text-xs font-semibold text-gold-600">
                   <Clock size={12} /> {s.prazo}
                 </span>
               </a>

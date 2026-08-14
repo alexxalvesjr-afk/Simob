@@ -65,18 +65,18 @@ export default function PlacaConsole() {
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-gold-500 animate-pulse-gold" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-300">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-600">
               Consulta gratuita
             </span>
           </div>
-          <span className="rounded-full bg-ink-600/70 px-2.5 py-1 text-[0.65rem] font-medium text-cream-300/70">
+          <span className="rounded-full bg-paper-3 px-2.5 py-1 text-[0.65rem] font-medium text-ink-500">
             base DETRAN-BA
           </span>
         </div>
 
         {/* Placa padrão Mercosul */}
         <div className="relative mx-auto w-full max-w-[19rem]">
-          <div className="relative overflow-hidden rounded-xl border-[3px] border-ink-400 bg-gradient-to-b from-white to-cream-200 shadow-lg">
+          <div className="relative overflow-hidden rounded-xl border-[3px] border-ink-400 bg-gradient-to-b from-white to-paper-4 shadow-lg">
             {/* Tarja azul superior */}
             <div className="flex items-center justify-between bg-[#1c3faa] px-2.5 py-1">
               <span className="text-[0.5rem] font-bold text-white/85">MERCOSUL</span>
@@ -89,7 +89,7 @@ export default function PlacaConsole() {
               <span className="font-display text-[2.6rem] font-bold leading-none tracking-[0.08em] text-ink-800">
                 {placa || " "}
                 {fase === "repouso" && placa.length < 7 && (
-                  <span className="ml-0.5 inline-block h-9 w-0.5 animate-pulse bg-ink-800 align-middle" />
+                  <span className="ml-0.5 inline-block h-9 w-0.5 animate-pulse bg-paper-3 align-middle" />
                 )}
               </span>
             </div>
@@ -115,7 +115,7 @@ export default function PlacaConsole() {
             }}
             placeholder="ABC1D23"
             maxLength={7}
-            className="min-w-0 flex-1 rounded-xl border border-gold-500/20 bg-ink-800/70 px-4 py-3 font-display tracking-[0.2em] text-cream-50 placeholder:tracking-normal placeholder:text-cream-300/35 focus:border-gold-400/60 focus:outline-none"
+            className="min-w-0 flex-1 rounded-xl border border-gold-600/30 bg-paper px-4 py-3 font-display tracking-[0.2em] text-ink-900 placeholder:tracking-normal placeholder:text-ink-300 focus:border-gold-400/60 focus:outline-none"
           />
           <button
             type="submit"
@@ -144,14 +144,14 @@ export default function PlacaConsole() {
                     oculto: { opacity: 0, x: -14 },
                     visivel: { opacity: 1, x: 0 },
                   }}
-                  className="flex items-center justify-between rounded-xl border border-gold-500/10 bg-ink-800/50 px-4 py-2.5"
+                  className="flex items-center justify-between rounded-xl border border-ink-900/8 bg-paper px-4 py-2.5"
                 >
-                  <span className="flex items-center gap-2.5 text-sm text-cream-300/80">
-                    <Icone size={15} className={ok ? "text-emerald-400" : "text-gold-400"} />
+                  <span className="flex items-center gap-2.5 text-sm text-ink-500">
+                    <Icone size={15} className={ok ? "text-emerald-600" : "text-gold-600"} />
                     {rotulo}
                   </span>
                   <span
-                    className={`text-sm font-semibold ${ok ? "text-emerald-300" : "text-gold-300"}`}
+                    className={`text-sm font-semibold ${ok ? "text-emerald-700" : "text-gold-600"}`}
                   >
                     {valor}
                   </span>
@@ -160,7 +160,7 @@ export default function PlacaConsole() {
 
               <motion.p
                 variants={{ oculto: { opacity: 0 }, visivel: { opacity: 1 } }}
-                className="pt-1 text-center text-xs text-cream-300/45"
+                className="pt-1 text-center text-xs text-ink-400"
               >
                 Demonstração ilustrativa · a consulta real usa a base oficial
               </motion.p>
@@ -174,12 +174,12 @@ export default function PlacaConsole() {
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.1, type: "spring", stiffness: 260, damping: 20 }}
-        className="absolute -bottom-7 -left-3 hidden items-center gap-2.5 rounded-2xl border border-gold-500/30 bg-ink-700 px-4 py-3 shadow-depth sm:flex lg:-left-11"
+        className="absolute -bottom-7 -left-3 hidden items-center gap-2.5 rounded-2xl border border-gold-600/40 bg-paper-3 px-4 py-3 shadow-depth sm:flex lg:-left-11"
       >
-        <ShieldCheck size={19} className="text-gold-400" />
+        <ShieldCheck size={19} className="text-gold-600" />
         <div className="leading-tight">
-          <p className="text-sm font-semibold text-cream-50">Resposta em 48h</p>
-          <p className="text-[0.7rem] text-cream-300/60">prazo médio dos processos</p>
+          <p className="text-sm font-semibold text-ink-900">Resposta em 48h</p>
+          <p className="text-[0.7rem] text-ink-400">prazo médio dos processos</p>
         </div>
       </motion.div>
     </div>

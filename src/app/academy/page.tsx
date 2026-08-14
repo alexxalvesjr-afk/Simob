@@ -46,16 +46,16 @@ export default function AcademyPage() {
       </PageHero>
 
       {/* ---- Pilares ---- */}
-      <Section className="border-b border-gold-500/10">
+      <Section className="border-b border-ink-900/8">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {pilares.map(({ Icone, titulo, texto }, i) => (
             <Reveal key={titulo} delay={i * 0.08}>
-              <div className="group h-full rounded-2xl border border-gold-500/12 bg-ink-800/45 p-6 transition-all duration-500 hover:border-gold-500/30">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300 transition-transform duration-500 group-hover:scale-110">
+              <div className="group h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-6 transition-all duration-500 hover:border-gold-600/40">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
                   <Icone size={19} />
                 </span>
-                <h3 className="mt-5 font-display text-base font-bold text-cream-50">{titulo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-cream-300/65">{texto}</p>
+                <h3 className="mt-5 font-display text-base font-bold text-ink-900">{titulo}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-500">{texto}</p>
               </div>
             </Reveal>
           ))}

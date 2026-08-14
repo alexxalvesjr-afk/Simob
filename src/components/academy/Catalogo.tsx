@@ -35,7 +35,7 @@ export default function Catalogo() {
       <div className="relative mb-6">
         <Search
           size={17}
-          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-cream-300/35"
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-ink-300"
         />
         <label htmlFor="busca-curso" className="sr-only">
           Buscar curso
@@ -45,7 +45,7 @@ export default function Catalogo() {
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
           placeholder="Buscar curso…"
-          className="w-full rounded-xl border border-gold-500/15 bg-ink-800/60 py-3.5 pl-11 pr-4 text-cream-50 placeholder:text-cream-300/35 transition-colors focus:border-gold-400/60 focus:outline-none"
+          className="w-full rounded-xl border border-ink-900/10 bg-paper py-3.5 pl-11 pr-4 text-ink-900 placeholder:text-ink-300 transition-colors focus:border-gold-400/60 focus:outline-none"
         />
       </div>
 
@@ -58,7 +58,7 @@ export default function Catalogo() {
               key={c}
               onClick={() => setCategoria(c)}
               className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                ativo ? "text-ink-900" : "text-cream-300/70 hover:text-cream-50"
+                ativo ? "text-ink-900" : "text-ink-500 hover:text-ink-900"
               }`}
             >
               {ativo && (
@@ -69,7 +69,7 @@ export default function Catalogo() {
                 />
               )}
               {!ativo && (
-                <span className="absolute inset-0 -z-10 rounded-full border border-gold-500/15" />
+                <span className="absolute inset-0 -z-10 rounded-full border border-ink-900/10" />
               )}
               {c}
             </button>
@@ -89,9 +89,9 @@ export default function Catalogo() {
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
             >
-              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gold-500/12 bg-ink-800/45 transition-all duration-400 hover:border-gold-500/32 hover:bg-ink-700/50">
+              <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 transition-all duration-400 hover:border-gold-600/40 hover:bg-paper-2">
                 {/* Faixa superior no lugar de foto — vetorial e leve */}
-                <div className="relative h-28 overflow-hidden border-b border-gold-500/10 bg-gradient-to-br from-ink-700 to-ink-900">
+                <div className="relative h-28 overflow-hidden border-b border-ink-900/8 bg-gradient-to-br from-gold-50 via-paper-3 to-paper-4">
                   <div
                     className="absolute inset-0 opacity-70"
                     style={{
@@ -114,20 +114,20 @@ export default function Catalogo() {
                       {c.selo}
                     </span>
                   )}
-                  <span className="absolute bottom-4 left-4 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-gold-400">
+                  <span className="absolute bottom-4 left-4 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-gold-600">
                     {c.categoria}
                   </span>
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="font-display text-lg font-bold leading-snug text-cream-50">
+                  <h3 className="font-display text-lg font-bold leading-snug text-ink-900">
                     {c.nome}
                   </h3>
-                  <p className="mt-2.5 flex-1 text-sm leading-relaxed text-cream-300/65">
+                  <p className="mt-2.5 flex-1 text-sm leading-relaxed text-ink-500">
                     {c.desc}
                   </p>
 
-                  <div className="mt-5 flex items-center gap-4 text-xs text-cream-300/50">
+                  <div className="mt-5 flex items-center gap-4 text-xs text-ink-400">
                     <span className="flex items-center gap-1.5">
                       <Clock size={13} /> {c.carga}
                     </span>
@@ -136,10 +136,10 @@ export default function Catalogo() {
                     </span>
                   </div>
 
-                  <div className="mt-5 flex items-end justify-between border-t border-gold-500/10 pt-5">
+                  <div className="mt-5 flex items-end justify-between border-t border-ink-900/8 pt-5">
                     <span>
                       {c.de && (
-                        <span className="mr-2 text-sm text-cream-300/35 line-through">
+                        <span className="mr-2 text-sm text-ink-300 line-through">
                           {c.de}
                         </span>
                       )}
@@ -152,7 +152,7 @@ export default function Catalogo() {
                       href={whatsappLink(`Olá! Quero me matricular no curso: ${c.nome}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-gold-500/30 px-4 py-2 text-sm font-semibold text-gold-200 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-semibold text-gold-700 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
                     >
                       Matricular
                       <ArrowRight
@@ -169,7 +169,7 @@ export default function Catalogo() {
       </motion.ul>
 
       {filtrados.length === 0 && (
-        <p className="py-16 text-center text-cream-300/50">
+        <p className="py-16 text-center text-ink-400">
           Nenhum curso encontrado. Tente outro termo ou fale com a gente no WhatsApp.
         </p>
       )}

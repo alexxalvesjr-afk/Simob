@@ -10,13 +10,13 @@ export default function Credenciais() {
   const fita = [...credenciais, ...credenciais];
 
   return (
-    <section className="border-y border-gold-500/10 bg-ink-800/40 py-7" aria-label="Credenciais">
+    <section className="border-y border-ink-900/8 bg-paper-2 py-7" aria-label="Credenciais">
       <div className="mask-edges flex overflow-hidden">
         <ul className="flex shrink-0 animate-marquee items-center gap-12 pr-12">
           {fita.map((c, i) => (
             <li
               key={`${c}-${i}`}
-              className="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-sm font-medium text-cream-300/55"
+              className="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-sm font-medium text-ink-400"
               aria-hidden={i >= credenciais.length}
             >
               <BadgeCheck size={17} className="text-gold-500/80" />

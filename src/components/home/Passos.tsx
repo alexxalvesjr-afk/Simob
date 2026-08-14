@@ -30,14 +30,14 @@ export default function Passos() {
             <Reveal key={p.n} delay={i * 0.12}>
               <li className="group relative">
                 {/* Marcador */}
-                <div className="relative z-10 mb-6 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-gold-500/25 bg-ink-900 font-display text-2xl font-bold text-gold-gradient transition-all duration-500 group-hover:border-gold-400/60 group-hover:shadow-gold">
+                <div className="relative z-10 mb-6 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-gold-600/30 bg-paper font-display text-2xl font-bold text-gold-gradient transition-all duration-500 group-hover:border-gold-400/60 group-hover:shadow-gold">
                   {p.n}
                 </div>
 
-                <h3 className="font-display text-xl font-bold leading-snug text-cream-50">
+                <h3 className="font-display text-xl font-bold leading-snug text-ink-900">
                   {p.titulo}
                 </h3>
-                <p className="mt-2.5 leading-relaxed text-cream-300/65">{p.texto}</p>
+                <p className="mt-2.5 leading-relaxed text-ink-500">{p.texto}</p>
               </li>
             </Reveal>
           ))}

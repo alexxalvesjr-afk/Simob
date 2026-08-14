@@ -34,7 +34,7 @@ export default function PsicologiaPage() {
       </PageHero>
 
       {/* ---- Garantias de confiança ---- */}
-      <Section className="border-b border-gold-500/10">
+      <Section className="border-b border-ink-900/8">
         <div className="grid gap-5 sm:grid-cols-3">
           {[
             { Icone: Lock, t: "Sigilo integral", d: "Garantido pelo Código de Ética do Psicólogo. Nem a empresa contratante tem acesso ao conteúdo das sessões." },
@@ -42,12 +42,12 @@ export default function PsicologiaPage() {
             { Icone: MapPin, t: "Unidade em Salvador", d: "Atendimento presencial no Caminho das Árvores, com agenda flexível." },
           ].map(({ Icone, t, d }, i) => (
             <Reveal key={t} delay={i * 0.09}>
-              <div className="h-full rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300">
+              <div className="h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-7">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600">
                   <Icone size={19} />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-bold text-cream-50">{t}</h3>
-                <p className="mt-2 leading-relaxed text-cream-300/65">{d}</p>
+                <h3 className="mt-5 font-display text-lg font-bold text-ink-900">{t}</h3>
+                <p className="mt-2 leading-relaxed text-ink-500">{d}</p>
               </div>
             </Reveal>
           ))}
@@ -67,14 +67,14 @@ export default function PsicologiaPage() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {atendimentosPsico.map((a, i) => (
             <Reveal key={a.titulo} delay={i * 0.08}>
-              <div className="group flex h-full flex-col rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7 transition-all duration-500 hover:border-gold-500/30">
-                <span className="w-fit rounded-full bg-purple-500/12 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-wider text-purple-300">
+              <div className="group flex h-full flex-col rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40">
+                <span className="w-fit rounded-full bg-purple-500/12 px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-wider text-purple-700">
                   {a.formato}
                 </span>
-                <h3 className="mt-4 font-display text-xl font-bold text-cream-50">
+                <h3 className="mt-4 font-display text-xl font-bold text-ink-900">
                   {a.titulo}
                 </h3>
-                <p className="mt-2.5 flex-1 leading-relaxed text-cream-300/68">{a.texto}</p>
+                <p className="mt-2.5 flex-1 leading-relaxed text-ink-500">{a.texto}</p>
               </div>
             </Reveal>
           ))}
@@ -82,7 +82,7 @@ export default function PsicologiaPage() {
       </Section>
 
       {/* ---- Processo ---- */}
-      <Section className="border-y border-gold-500/10 bg-ink-800/30">
+      <Section className="border-y border-ink-900/8 bg-paper-2">
         <SectionHead
           eyebrow="Processo"
           titulo="Como é o"
@@ -103,13 +103,13 @@ export default function PsicologiaPage() {
             {passosPsico.map((p, i) => (
               <Reveal key={p.n} delay={i * 0.11}>
                 <li className="group">
-                  <div className="relative z-10 mb-6 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-gold-500/25 bg-ink-900 font-display text-2xl font-bold text-gold-gradient transition-all duration-500 group-hover:border-gold-400/60 group-hover:shadow-gold">
+                  <div className="relative z-10 mb-6 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl border border-gold-600/30 bg-paper font-display text-2xl font-bold text-gold-gradient transition-all duration-500 group-hover:border-gold-400/60 group-hover:shadow-gold">
                     {p.n}
                   </div>
-                  <h3 className="font-display text-lg font-bold leading-snug text-cream-50">
+                  <h3 className="font-display text-lg font-bold leading-snug text-ink-900">
                     {p.titulo}
                   </h3>
-                  <p className="mt-2.5 leading-relaxed text-cream-300/65">{p.texto}</p>
+                  <p className="mt-2.5 leading-relaxed text-ink-500">{p.texto}</p>
                 </li>
               </Reveal>
             ))}

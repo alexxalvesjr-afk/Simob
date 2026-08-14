@@ -75,10 +75,10 @@ export default function GestaoPage() {
       </PageHero>
 
       {/* ---- O problema ---- */}
-      <Section className="border-b border-gold-500/10">
+      <Section className="border-b border-ink-900/8">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="font-display text-2xl leading-relaxed text-cream-100 sm:text-[1.9rem] sm:leading-[1.4]">
+            <p className="font-display text-2xl leading-relaxed text-ink-800 sm:text-[1.9rem] sm:leading-[1.4]">
               Toda frota que a gente atende chegava com{" "}
               <span className="text-gold-gradient">a mesma planilha</span> — desatualizada,
               compartilhada por seis pessoas e com um licenciamento vencido escondido
@@ -86,7 +86,7 @@ export default function GestaoPage() {
             </p>
           </Reveal>
           <Reveal delay={0.14}>
-            <p className="mt-7 text-lg text-cream-300/65">
+            <p className="mt-7 text-lg text-ink-500">
               A SiMoB Gestão nasceu para acabar com essa planilha.
             </p>
           </Reveal>
@@ -108,15 +108,15 @@ export default function GestaoPage() {
             const Icone = icones[i];
             return (
               <Reveal key={r.titulo} delay={i * 0.07}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7 transition-all duration-500 hover:border-gold-500/32 hover:bg-ink-700/50">
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40 hover:bg-paper-2">
                   <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gold-500/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300 transition-transform duration-500 group-hover:scale-110">
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
                     <Icone size={21} />
                   </span>
-                  <h3 className="relative mt-6 font-display text-lg font-bold text-cream-50">
+                  <h3 className="relative mt-6 font-display text-lg font-bold text-ink-900">
                     {r.titulo}
                   </h3>
-                  <p className="relative mt-2.5 leading-relaxed text-cream-300/68">
+                  <p className="relative mt-2.5 leading-relaxed text-ink-500">
                     {r.texto}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ export default function GestaoPage() {
       </Section>
 
       {/* ---- Planos ---- */}
-      <Section id="planos" className="border-y border-gold-500/10 bg-ink-800/30">
+      <Section id="planos" className="border-y border-ink-900/8 bg-paper-2">
         <SectionHead
           eyebrow="Planos"
           titulo="Preço que cabe"
@@ -144,8 +144,8 @@ export default function GestaoPage() {
                 <div
                   className={`relative flex h-full flex-col rounded-[1.5rem] p-8 transition-all duration-500 ${
                     destaque
-                      ? "border border-gold-400/45 bg-gradient-to-b from-ink-700 to-ink-900 shadow-gold lg:-translate-y-4"
-                      : "border border-gold-500/12 bg-ink-900/50 hover:border-gold-500/28"
+                      ? "border-2 border-gold-500/60 bg-gradient-to-b from-gold-50 to-paper shadow-gold lg:-translate-y-4"
+                      : "border border-ink-900/8 bg-paper hover:border-gold-600/30"
                   }`}
                 >
                   {destaque && (
@@ -154,30 +154,30 @@ export default function GestaoPage() {
                     </span>
                   )}
 
-                  <h3 className="font-display text-xl font-bold text-cream-50">
+                  <h3 className="font-display text-xl font-bold text-ink-900">
                     {plano.nome}
                   </h3>
-                  <p className="mt-1.5 text-sm text-cream-300/60">{plano.desc}</p>
+                  <p className="mt-1.5 text-sm text-ink-400">{plano.desc}</p>
 
                   <p className="mt-6 flex items-baseline gap-1">
                     <span
                       className={`font-display text-4xl font-bold ${
-                        destaque ? "text-gold-gradient" : "text-cream-50"
+                        destaque ? "text-gold-gradient" : "text-ink-900"
                       }`}
                     >
                       {plano.preco}
                     </span>
-                    <span className="text-cream-300/55">{plano.periodo}</span>
+                    <span className="text-ink-400">{plano.periodo}</span>
                   </p>
 
-                  <p className="mt-3 inline-flex w-fit rounded-full bg-gold-500/10 px-3 py-1 text-xs font-semibold text-gold-300">
+                  <p className="mt-3 inline-flex w-fit rounded-full bg-gold-500/10 px-3 py-1 text-xs font-semibold text-gold-600">
                     {plano.limite}
                   </p>
 
                   <ul className="mt-7 flex-1 space-y-3">
                     {plano.itens.map((item) => (
-                      <li key={item} className="flex gap-2.5 text-sm text-cream-200/80">
-                        <Check size={16} className="mt-0.5 shrink-0 text-gold-400" />
+                      <li key={item} className="flex gap-2.5 text-sm text-ink-600">
+                        <Check size={16} className="mt-0.5 shrink-0 text-gold-600" />
                         {item}
                       </li>
                     ))}
@@ -202,7 +202,7 @@ export default function GestaoPage() {
         </div>
 
         <Reveal delay={0.3}>
-          <p className="mt-12 text-center text-sm text-cream-300/50">
+          <p className="mt-12 text-center text-sm text-ink-400">
             Todos os planos incluem 14 dias de teste, sem cartão de crédito.
           </p>
         </Reveal>

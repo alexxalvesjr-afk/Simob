@@ -39,7 +39,7 @@ export default function LeiloesPage() {
       </PageHero>
 
       {/* ---- Garantias ---- */}
-      <Section className="border-b border-gold-500/10">
+      <Section className="border-b border-ink-900/8">
         <SectionHead
           eyebrow="Como garantimos"
           titulo="Leilão sem"
@@ -52,14 +52,14 @@ export default function LeiloesPage() {
             const Icone = icones[i];
             return (
               <Reveal key={g.titulo} delay={i * 0.08}>
-                <div className="group h-full rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7 transition-all duration-500 hover:border-gold-500/30">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300 transition-transform duration-500 group-hover:scale-110">
+                <div className="group h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
                     <Icone size={20} />
                   </span>
-                  <h3 className="mt-5 font-display text-lg font-bold text-cream-50">
+                  <h3 className="mt-5 font-display text-lg font-bold text-ink-900">
                     {g.titulo}
                   </h3>
-                  <p className="mt-2 leading-relaxed text-cream-300/65">{g.texto}</p>
+                  <p className="mt-2 leading-relaxed text-ink-500">{g.texto}</p>
                 </div>
               </Reveal>
             );
@@ -79,13 +79,13 @@ export default function LeiloesPage() {
 
         <Reveal delay={0.1}>
           <div className="glass mx-auto mt-14 max-w-2xl rounded-2xl p-10 text-center">
-            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-500/25 bg-gold-500/10 text-gold-300">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-600/30 bg-gold-500/10 text-gold-600">
               <Gavel size={24} />
             </span>
-            <h3 className="mt-6 font-display text-2xl font-bold text-cream-50">
+            <h3 className="mt-6 font-display text-2xl font-bold text-ink-900">
               O próximo leilão está sendo montado
             </h3>
-            <p className="mx-auto mt-3 max-w-md leading-relaxed text-cream-300/70">
+            <p className="mx-auto mt-3 max-w-md leading-relaxed text-ink-500">
               Entre na lista e receba o edital e os lotes no WhatsApp assim que forem
               publicados — antes de irem para as redes.
             </p>
@@ -105,7 +105,7 @@ export default function LeiloesPage() {
       </Section>
 
       {/* ---- Comitente ---- */}
-      <Section id="comitente" className="border-y border-gold-500/10 bg-ink-800/30">
+      <Section id="comitente" className="border-y border-ink-900/8 bg-paper-2">
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
             <SectionHead
@@ -140,12 +140,12 @@ export default function LeiloesPage() {
               ].map((item, i) => (
                 <li
                   key={item}
-                  className="flex items-center gap-4 rounded-xl border border-gold-500/12 bg-ink-900/50 px-5 py-4"
+                  className="flex items-center gap-4 rounded-xl border border-ink-900/8 bg-paper px-5 py-4"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/12 font-display text-sm font-bold text-gold-300">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/12 font-display text-sm font-bold text-gold-600">
                     {i + 1}
                   </span>
-                  <span className="text-cream-100/85">{item}</span>
+                  <span className="text-ink-700">{item}</span>
                 </li>
               ))}
             </ul>

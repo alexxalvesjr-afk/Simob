@@ -12,7 +12,7 @@ const uteis = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-gold-500/12 bg-ink-900">
+    <footer className="relative border-t border-gold-500/15 bg-ink-900">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Marca */}
           <div>
             <Logo className="h-12 w-auto" />
-            <p className="mt-5 max-w-xs leading-relaxed text-cream-300/60">
+            <p className="mt-5 max-w-xs leading-relaxed text-white/55">
               {empresa.assinatura}. {empresa.promessa}
             </p>
 
@@ -37,7 +37,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram do Grupo SiMoB"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold-500/20 text-cream-300/70 transition-all duration-300 hover:border-gold-400/50 hover:text-gold-300"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold-500/25 text-white/60 transition-all duration-300 hover:border-gold-400/50 hover:text-gold-300"
               >
                 <Instagram size={17} />
               </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook do Grupo SiMoB"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold-500/20 text-cream-300/70 transition-all duration-300 hover:border-gold-400/50 hover:text-gold-300"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-gold-500/25 text-white/60 transition-all duration-300 hover:border-gold-400/50 hover:text-gold-300"
               >
                 <Facebook size={17} />
               </a>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li key={v.id}>
                   <Link
                     href={v.slug}
-                    className="text-cream-300/60 transition-colors hover:text-gold-200"
+                    className="text-white/55 transition-colors hover:text-gold-300"
                   >
                     {v.nome}
                   </Link>
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="text-cream-300/60 transition-colors hover:text-gold-200"
+                    className="text-white/55 transition-colors hover:text-gold-300"
                   >
                     {l.label}
                   </Link>
@@ -96,14 +96,14 @@ export default function Footer() {
             <h3 className="font-display text-sm font-bold uppercase tracking-[0.14em] text-gold-300">
               Contato
             </h3>
-            <ul className="mt-5 space-y-4 text-cream-300/60">
+            <ul className="mt-5 space-y-4 text-white/55">
               <li className="flex gap-3">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-gold-500" />
                 <a
                   href={empresa.endereco.maps}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="leading-relaxed transition-colors hover:text-gold-200"
+                  className="leading-relaxed transition-colors hover:text-gold-300"
                 >
                   {empresa.endereco.linha1}
                   <br />
@@ -122,7 +122,7 @@ export default function Footer() {
                 <Mail size={16} className="mt-0.5 shrink-0 text-gold-500" />
                 <a
                   href={`mailto:${empresa.contato.email}`}
-                  className="transition-colors hover:text-gold-200"
+                  className="transition-colors hover:text-gold-300"
                 >
                   {empresa.contato.email}
                 </a>
@@ -140,7 +140,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-gold-500/10 pt-8 text-sm text-cream-300/40 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-gold-500/12 pt-8 text-sm text-white/55 sm:flex-row">
           <p>
             © {new Date().getFullYear()} {empresa.nome}. Todos os direitos reservados.
           </p>

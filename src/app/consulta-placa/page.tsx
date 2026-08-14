@@ -43,12 +43,12 @@ export default function ConsultaPlacaPage() {
         <div className="mt-14 grid gap-5 sm:grid-cols-3">
           {oQueMostra.map(({ Icone, t, d }, i) => (
             <Reveal key={t} delay={i * 0.09}>
-              <div className="h-full rounded-2xl border border-gold-500/12 bg-ink-800/45 p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300">
+              <div className="h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-7">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600">
                   <Icone size={19} />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-bold text-cream-50">{t}</h3>
-                <p className="mt-2 leading-relaxed text-cream-300/65">{d}</p>
+                <h3 className="mt-5 font-display text-lg font-bold text-ink-900">{t}</h3>
+                <p className="mt-2 leading-relaxed text-ink-500">{d}</p>
               </div>
             </Reveal>
           ))}
@@ -56,13 +56,13 @@ export default function ConsultaPlacaPage() {
       </Section>
 
       {/* ---- Ponte para o serviço ---- */}
-      <Section className="border-y border-gold-500/10 bg-ink-800/30">
+      <Section className="border-y border-ink-900/8 bg-paper-2">
         <Reveal>
           <div className="glass mx-auto max-w-3xl rounded-2xl p-10 text-center">
-            <h2 className="font-display text-3xl font-bold text-cream-50 sm:text-4xl">
+            <h2 className="font-display text-3xl font-bold text-ink-900 sm:text-4xl">
               Apareceu pendência na consulta?
             </h2>
-            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-cream-300/72">
+            <p className="mx-auto mt-4 max-w-xl leading-relaxed text-ink-500">
               Multas, IPVA atrasado, licenciamento vencido, restrição de transferência —
               a SiMoB DOC resolve tudo isso sem você precisar ir ao DETRAN.
             </p>

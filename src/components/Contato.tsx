@@ -16,10 +16,10 @@ import { verticais, whatsappLink } from "@/content/site";
 const FORM_ENDPOINT = "";
 
 const campo =
-  "w-full rounded-xl border border-gold-500/15 bg-ink-800/60 px-4 py-3 text-cream-50 placeholder:text-cream-300/30 transition-colors focus:border-gold-400/60 focus:outline-none";
+  "w-full rounded-xl border border-ink-900/10 bg-paper px-4 py-3 text-ink-900 placeholder:text-ink-300 transition-colors focus:border-gold-400/60 focus:outline-none";
 
 const rotulo =
-  "mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-cream-300/55";
+  "mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink-400";
 
 export default function Contato() {
   const [enviando, setEnviando] = useState(false);
@@ -59,7 +59,7 @@ export default function Contato() {
   }
 
   return (
-    <Section id="contato" className="border-t border-gold-500/10">
+    <Section id="contato" className="border-t border-ink-900/8">
       <SectionHead
         eyebrow="Fale conosco"
         titulo="Conta pra gente"
@@ -75,11 +75,11 @@ export default function Contato() {
             animate={{ opacity: 1, scale: 1 }}
             className="glass rounded-2xl p-10 text-center"
           >
-            <CircleCheck size={44} className="mx-auto text-emerald-400" />
-            <h3 className="mt-5 font-display text-2xl font-bold text-cream-50">
+            <CircleCheck size={44} className="mx-auto text-emerald-600" />
+            <h3 className="mt-5 font-display text-2xl font-bold text-ink-900">
               Abrimos o seu WhatsApp
             </h3>
-            <p className="mt-2.5 text-cream-300/70">
+            <p className="mt-2.5 text-ink-500">
               Se a janela não abriu, toque no botão abaixo — sua mensagem já está pronta.
             </p>
             <a
@@ -132,11 +132,11 @@ export default function Contato() {
                     Selecione…
                   </option>
                   {verticais.map((v) => (
-                    <option key={v.id} value={v.nome} className="bg-ink-800">
+                    <option key={v.id} value={v.nome} className="bg-paper-3">
                       {v.nome} — {v.eyebrow}
                     </option>
                   ))}
-                  <option value="SiMoB Gestão" className="bg-ink-800">
+                  <option value="SiMoB Gestão" className="bg-paper-3">
                     SiMoB Gestão — plataforma para frotas
                   </option>
                 </select>
@@ -164,7 +164,7 @@ export default function Contato() {
                 <Send size={17} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </button>
 
-              <p className="mt-4 text-center text-xs leading-relaxed text-cream-300/45">
+              <p className="mt-4 text-center text-xs leading-relaxed text-ink-400">
                 Ao enviar, você concorda em ser contatado pela equipe do Grupo SiMoB.
                 Não compartilhamos seus dados com terceiros.
               </p>

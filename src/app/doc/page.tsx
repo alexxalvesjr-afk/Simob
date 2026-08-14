@@ -87,7 +87,7 @@ export default function DocPage() {
           {porCategoria().map(([categoria, itens], gi) => (
             <Reveal key={categoria} delay={gi * 0.06}>
               <div>
-                <h3 className="mb-4 flex items-center gap-3 font-display text-sm font-bold uppercase tracking-[0.16em] text-gold-400">
+                <h3 className="mb-4 flex items-center gap-3 font-display text-sm font-bold uppercase tracking-[0.16em] text-gold-600">
                   {categoria}
                   <span className="h-px flex-1 bg-gradient-to-r from-gold-500/35 to-transparent" />
                 </h3>
@@ -101,12 +101,12 @@ export default function DocPage() {
                         )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex h-full items-center justify-between gap-4 rounded-xl border border-gold-500/12 bg-ink-800/45 px-5 py-4 transition-all duration-400 hover:border-gold-500/35 hover:bg-ink-700/50"
+                        className="group flex h-full items-center justify-between gap-4 rounded-xl border border-ink-900/8 bg-paper-2 px-5 py-4 transition-all duration-400 hover:border-gold-600/40 hover:bg-paper-2"
                       >
-                        <span className="font-medium leading-snug text-cream-100">
+                        <span className="font-medium leading-snug text-ink-800">
                           {s.nome}
                         </span>
-                        <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-gold-500/10 px-2.5 py-1 text-[0.7rem] font-semibold text-gold-300">
+                        <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-gold-500/10 px-2.5 py-1 text-[0.7rem] font-semibold text-gold-600">
                           <Clock size={11} />
                           {s.prazo}
                         </span>
@@ -121,7 +121,7 @@ export default function DocPage() {
       </Section>
 
       {/* ---- Diferenciais ---- */}
-      <Section className="border-y border-gold-500/10 bg-ink-800/30">
+      <Section className="border-y border-ink-900/8 bg-paper-2">
         <SectionHead
           eyebrow="Por que a SiMoB"
           titulo="O despachante que você"
@@ -132,13 +132,13 @@ export default function DocPage() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {diferenciais.map(({ Icone, titulo, texto }, i) => (
             <Reveal key={titulo} delay={i * 0.08}>
-              <div className="group flex h-full gap-5 rounded-2xl border border-gold-500/12 bg-ink-900/50 p-7 transition-all duration-500 hover:border-gold-500/30">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold-500/25 bg-gold-500/10 text-gold-300 transition-transform duration-500 group-hover:scale-110">
+              <div className="group flex h-full gap-5 rounded-2xl border border-ink-900/8 bg-paper p-7 transition-all duration-500 hover:border-gold-600/40">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
                   <Icone size={21} />
                 </span>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-cream-50">{titulo}</h3>
-                  <p className="mt-2 leading-relaxed text-cream-300/68">{texto}</p>
+                  <h3 className="font-display text-lg font-bold text-ink-900">{titulo}</h3>
+                  <p className="mt-2 leading-relaxed text-ink-500">{texto}</p>
                 </div>
               </div>
             </Reveal>

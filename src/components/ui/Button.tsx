@@ -16,8 +16,8 @@ const variantes: Record<Variante, string> = {
   ouro:
     "bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 text-ink-900 shadow-gold-sm hover:shadow-gold-lg hover:-translate-y-0.5",
   contorno:
-    "border border-gold-500/35 text-gold-100 hover:border-gold-400/70 hover:bg-gold-500/10 hover:-translate-y-0.5",
-  fantasma: "text-cream-200 hover:text-gold-300",
+    "border border-gold-600/40 text-gold-700 hover:border-gold-400/70 hover:bg-gold-500/10 hover:-translate-y-0.5",
+  fantasma: "text-ink-600 hover:text-gold-600",
   whats:
     "bg-signal-whats text-white shadow-[0_8px_28px_-8px_rgba(37,211,102,0.55)] hover:-translate-y-0.5 hover:shadow-[0_14px_38px_-8px_rgba(37,211,102,0.7)]",
 };

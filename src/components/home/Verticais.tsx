@@ -32,7 +32,7 @@ export default function Verticais() {
         <Reveal className="lg:col-span-7">
           <Link
             href={principal.slug}
-            className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.75rem] border border-gold-500/25 bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900 p-8 transition-all duration-500 hover:border-gold-400/50 sm:p-10"
+            className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.75rem] border border-gold-600/30 bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900 p-8 transition-all duration-500 hover:border-gold-400/50 sm:p-10"
           >
             {/* Malha decorativa */}
             <div
@@ -47,9 +47,11 @@ export default function Verticais() {
               style={{ boxShadow: "inset 0 0 60px rgba(212,160,23,0.12)" }}
             />
 
+            {/* Âncora escura proposital: é o preto-e-ouro da marca e faz o
+                serviço principal saltar da página clara. */}
             <div className="relative">
               <div className="flex items-start justify-between gap-4">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-500/30 bg-gold-500/12 text-gold-300">
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-400/40 bg-gold-500/15 text-gold-300">
                   <IconePrincipal size={25} />
                 </span>
                 <span className="rounded-full border border-gold-400/40 bg-gold-500/15 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-wider text-gold-200">
@@ -57,23 +59,23 @@ export default function Verticais() {
                 </span>
               </div>
 
-              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">
+              <p className="mt-7 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
                 {principal.eyebrow}
               </p>
-              <h3 className="mt-2 font-display text-3xl font-bold text-cream-50 sm:text-4xl">
+              <h3 className="mt-2 font-display text-3xl font-bold text-white sm:text-4xl">
                 {principal.nome}
               </h3>
-              <p className="mt-3 max-w-md text-xl font-medium leading-snug text-gold-100/90">
+              <p className="mt-3 max-w-md text-xl font-medium leading-snug text-gold-100">
                 {principal.headline}
               </p>
-              <p className="mt-4 max-w-lg leading-relaxed text-cream-300/70">
+              <p className="mt-4 max-w-lg leading-relaxed text-white/70">
                 {principal.descricao}
               </p>
 
               <ul className="mt-7 grid gap-2.5 sm:grid-cols-2">
                 {principal.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2.5 text-sm text-cream-200/85">
-                    <Check size={15} className="shrink-0 text-gold-400" />
+                  <li key={b} className="flex items-center gap-2.5 text-sm text-white/85">
+                    <Check size={15} className="shrink-0 text-gold-300" />
                     {b}
                   </li>
                 ))}
@@ -95,7 +97,7 @@ export default function Verticais() {
               <Reveal key={v.id} delay={0.08 + i * 0.08}>
                 <Link
                   href={v.slug}
-                  className="group relative flex h-full items-start gap-4 overflow-hidden rounded-2xl border border-gold-500/12 bg-ink-800/45 p-6 transition-all duration-400 hover:border-gold-500/30 hover:bg-ink-700/55"
+                  className="group relative flex h-full items-start gap-4 overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 p-6 transition-all duration-400 hover:border-gold-600/40 hover:bg-paper-2"
                 >
                   {/* Barra de cor da vertical */}
                   <span
@@ -115,16 +117,16 @@ export default function Verticais() {
                   </span>
 
                   <div className="min-w-0 flex-1">
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-cream-300/45">
+                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-ink-400">
                       {v.eyebrow}
                     </p>
-                    <h3 className="mt-1 font-display text-lg font-bold text-cream-50">
+                    <h3 className="mt-1 font-display text-lg font-bold text-ink-900">
                       {v.nome}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-cream-300/65">
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink-500">
                       {v.descricao}
                     </p>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300">
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-600">
                       {v.cta}
                       <ArrowUpRight
                         size={14}

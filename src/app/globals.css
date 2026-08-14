@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 /* ============================================================
-   GRUPO SiMoB — DESIGN SYSTEM  "Obsidian & Gold"
-   Identidade extraída do Instagram @simob.br:
-   preto profundo + gradiente dourado + tipografia confiante.
+   GRUPO SiMoB — DESIGN SYSTEM  "Ivory & Gold"
+   Tema claro: papel quente + ouro da marca + âncoras escuras
+   nos momentos de produto (card em destaque, painel, rodapé e CTA).
    ============================================================ */
 
 @theme {
-  /* — Obsidiana (base escura) — */
-  --color-ink-900: #04060c;
-  --color-ink-800: #070b14;
-  --color-ink-700: #0b1120;
-  --color-ink-600: #111a2e;
-  --color-ink-500: #1a2540;
-  --color-ink-400: #263352;
+  /* — Papel (superfícies claras) — */
+  --color-paper: #ffffff;
+  --color-paper-2: #faf8f3;
+  --color-paper-3: #f3efe5;
+  --color-paper-4: #e8e2d4;
 
-  /* — Ouro SiMoB (do logo/artes do Instagram) — */
+  /* — Tinta (texto e âncoras escuras) — */
+  --color-ink-900: #080c17;
+  --color-ink-800: #101728;
+  --color-ink-700: #26314c;
+  --color-ink-600: #3d4966;
+  --color-ink-500: #5b6580;
+  --color-ink-400: #8b93a6;
+  --color-ink-300: #b4bac7;
+
+  /* — Ouro SiMoB (do logotipo do Instagram) — */
   --color-gold-50: #fdf8e9;
   --color-gold-100: #fbeecb;
   --color-gold-200: #f7dd97;
@@ -26,28 +33,26 @@
   --color-gold-700: #8a6110;
   --color-gold-800: #5c4009;
 
-  /* — Neutros quentes — */
-  --color-cream-50: #fbfaf7;
-  --color-cream-100: #f5f2ea;
-  --color-cream-200: #e8e2d4;
-  --color-cream-300: #cfc7b5;
+  /* Vermelho do pingo do "i" no logotipo */
+  --color-brand-dot: #a01c1c;
 
   /* — Sinal — */
-  --color-signal-whats: #25d366;
+  --color-signal-whats: #1da851;
 
   /* — Tipografia — */
   --font-display: var(--font-sora), "Segoe UI", system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
-  /* — Curvas de animação — */
+  /* — Curvas — */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* — Sombras douradas — */
-  --shadow-gold-sm: 0 2px 12px -2px rgb(212 160 23 / 0.25);
-  --shadow-gold: 0 8px 32px -8px rgb(212 160 23 / 0.35);
-  --shadow-gold-lg: 0 20px 60px -15px rgb(212 160 23 / 0.4);
-  --shadow-depth: 0 24px 70px -20px rgb(0 0 0 / 0.7);
+  /* — Sombras (claras, com base quente) — */
+  --shadow-soft: 0 1px 2px rgb(16 23 40 / 0.04), 0 8px 24px -12px rgb(16 23 40 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(16 23 40 / 0.04), 0 18px 44px -18px rgb(16 23 40 / 0.2);
+  --shadow-gold-sm: 0 2px 12px -2px rgb(212 160 23 / 0.3);
+  --shadow-gold: 0 10px 30px -10px rgb(212 160 23 / 0.45);
+  --shadow-gold-lg: 0 22px 55px -18px rgb(212 160 23 / 0.5);
+  --shadow-depth: 0 30px 70px -25px rgb(16 23 40 / 0.35);
 }
 
 /* ============================================================
@@ -55,18 +60,14 @@
    ============================================================ */
 
 @layer base {
-  * {
-    border-color: color-mix(in oklab, var(--color-gold-500) 12%, transparent);
-  }
-
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: var(--color-ink-900);
-    color: var(--color-cream-100);
+    background-color: var(--color-paper);
+    color: var(--color-ink-500);
     font-family: var(--font-sans);
     font-feature-settings: "cv02", "cv03", "cv04", "ss01";
     -webkit-font-smoothing: antialiased;
@@ -78,33 +79,30 @@
     font-family: var(--font-display);
     letter-spacing: -0.03em;
     text-wrap: balance;
-  }
-
-  p {
-    text-wrap: pretty;
-  }
-
-  ::selection {
-    background: var(--color-gold-500);
     color: var(--color-ink-900);
   }
 
-  /* Foco visível e acessível em toda a interface */
+  p { text-wrap: pretty; }
+
+  ::selection {
+    background: var(--color-gold-300);
+    color: var(--color-ink-900);
+  }
+
   :focus-visible {
-    outline: 2px solid var(--color-gold-400);
+    outline: 2px solid var(--color-gold-600);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* Scrollbar coerente com a marca */
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: var(--color-ink-800); }
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--color-paper-3); }
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--color-gold-700), var(--color-gold-500));
+    background: linear-gradient(var(--color-gold-400), var(--color-gold-600));
     border-radius: 99px;
-    border: 2px solid var(--color-ink-800);
+    border: 3px solid var(--color-paper-3);
   }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-400); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-500); }
 }
 
 /* ============================================================
@@ -112,14 +110,52 @@
    ============================================================ */
 
 @layer utilities {
-  /* Texto com o gradiente dourado do logo */
+  /*
+    Ouro em texto sobre fundo claro.
+    Faixa escurecida de propósito: o ouro claro (#f2ca63) sobre branco fica
+    em 1,9:1 e some. Este gradiente fica acima de 3:1, o mínimo do WCAG AA
+    para texto grande — e é só em títulos grandes que ele é usado.
+  */
   .text-gold-gradient {
     background: linear-gradient(
       100deg,
+      var(--color-gold-600) 0%,
+      var(--color-gold-500) 28%,
+      var(--color-gold-700) 55%,
+      var(--color-gold-600) 80%,
+      var(--color-gold-500) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gold-shimmer {
+    background: linear-gradient(
+      100deg,
+      var(--color-gold-700) 0%,
+      var(--color-gold-500) 22%,
+      var(--color-gold-400) 32%,
+      var(--color-gold-600) 45%,
+      var(--color-gold-700) 70%,
+      var(--color-gold-600) 100%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 8s linear infinite;
+  }
+
+  /* Sobre âncoras escuras (rodapé, CTA, card em destaque) o ouro claro volta */
+  .on-dark .text-gold-gradient,
+  .text-gold-on-dark {
+    background: linear-gradient(
+      100deg,
       var(--color-gold-200) 0%,
-      var(--color-gold-400) 30%,
-      var(--color-gold-300) 55%,
-      var(--color-gold-500) 80%,
+      var(--color-gold-400) 35%,
+      var(--color-gold-300) 60%,
       var(--color-gold-200) 100%
     );
     background-size: 200% auto;
@@ -128,97 +164,85 @@
     color: transparent;
   }
 
-  /* Brilho que percorre o texto — usado no H1 */
-  .text-gold-shimmer {
-    background: linear-gradient(
-      100deg,
-      var(--color-gold-300) 0%,
-      var(--color-gold-100) 20%,
-      #fffdf5 30%,
-      var(--color-gold-200) 40%,
-      var(--color-gold-500) 70%,
-      var(--color-gold-300) 100%
-    );
-    background-size: 250% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shimmer 7s linear infinite;
-  }
-
-  /* Superfície de vidro escuro com fio de ouro */
+  /* Cartão de vidro claro */
   .glass {
-    background: linear-gradient(
-      145deg,
-      rgb(255 255 255 / 0.055),
-      rgb(255 255 255 / 0.015)
-    );
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-    border: 1px solid rgb(212 160 23 / 0.14);
+    background: rgb(255 255 255 / 0.78);
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgb(16 23 40 / 0.07);
+    box-shadow: var(--shadow-soft);
   }
 
   .glass-strong {
-    background: linear-gradient(
-      145deg,
-      rgb(255 255 255 / 0.09),
-      rgb(255 255 255 / 0.03)
-    );
+    background: rgb(255 255 255 / 0.92);
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgb(212 160 23 / 0.22);
+    border: 1px solid rgb(16 23 40 / 0.09);
+    box-shadow: var(--shadow-lift);
   }
 
-  /* Borda gradiente dourada (1px) sem hack de pseudo-elemento */
-  .border-gold-gradient {
-    border: 1px solid transparent;
-    background:
-      linear-gradient(var(--color-ink-800), var(--color-ink-800)) padding-box,
-      linear-gradient(135deg, rgb(242 202 99 / 0.55), rgb(212 160 23 / 0.08) 45%, rgb(242 202 99 / 0.4)) border-box;
+  /* Cartão padrão do site */
+  .card {
+    background: var(--color-paper);
+    border: 1px solid rgb(16 23 40 / 0.08);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow 0.5s var(--ease-out-expo),
+                border-color 0.4s var(--ease-out-expo),
+                transform 0.4s var(--ease-out-expo);
   }
 
-  /* Malha de luz do herói */
+  .card:hover {
+    border-color: rgb(212 160 23 / 0.42);
+    box-shadow: var(--shadow-lift);
+  }
+
+  /* Malha de luz dourada do herói, agora sobre papel */
   .mesh-gold {
     background-image:
-      radial-gradient(50rem 30rem at 12% -8%, rgb(212 160 23 / 0.20), transparent 62%),
-      radial-gradient(38rem 26rem at 92% 8%, rgb(232 178 60 / 0.13), transparent 60%),
-      radial-gradient(46rem 34rem at 55% 108%, rgb(180 131 15 / 0.16), transparent 62%);
+      radial-gradient(52rem 32rem at 10% -10%, rgb(242 202 99 / 0.28), transparent 62%),
+      radial-gradient(40rem 28rem at 94% 4%, rgb(232 178 60 / 0.20), transparent 60%),
+      radial-gradient(46rem 34rem at 55% 112%, rgb(251 238 203 / 0.55), transparent 62%);
   }
 
-  /* Grade técnica de fundo */
   .grid-tech {
     background-image:
-      linear-gradient(rgb(212 160 23 / 0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(212 160 23 / 0.055) 1px, transparent 1px);
+      linear-gradient(rgb(16 23 40 / 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(16 23 40 / 0.045) 1px, transparent 1px);
     background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 78% 58% at 50% 40%, #000 38%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 78% 58% at 50% 40%, #000 38%, transparent 100%);
   }
 
-  /* Fio de luz horizontal (divisor) */
   .hairline {
     height: 1px;
     background: linear-gradient(
       90deg,
       transparent,
-      rgb(212 160 23 / 0.45) 25%,
-      rgb(242 202 99 / 0.7) 50%,
-      rgb(212 160 23 / 0.45) 75%,
+      rgb(212 160 23 / 0.35) 25%,
+      rgb(212 160 23 / 0.6) 50%,
+      rgb(212 160 23 / 0.35) 75%,
       transparent
     );
   }
 
-  /* Máscara de fade nas laterais (marquee) */
   .mask-edges {
     mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
 
-  .animate-shimmer { animation: shimmer 7s linear infinite; }
+  .animate-shimmer { animation: shimmer 8s linear infinite; }
   .animate-float { animation: float 7s ease-in-out infinite; }
   .animate-pulse-gold { animation: pulse-gold 3s ease-in-out infinite; }
   .animate-marquee { animation: marquee 42s linear infinite; }
-  .animate-orbit { animation: orbit 26s linear infinite; }
+  /*
+    Órbita e contra-órbita como dois keyframes completos, de propósito.
+    Usar um só keyframe com [animation-direction:reverse] depende da ordem
+    em que o Tailwind emite as regras: o atalho `animation` da .animate-orbit
+    reseta animation-direction e os selos passam a girar junto com a órbita.
+    Duas animações explícitas, mesma duração, cancelam sempre.
+  */
+  .animate-orbit { animation: orbit 34s linear infinite; }
+  .animate-orbit-reverse { animation: orbit-reverse 34s linear infinite; }
   .animate-scan { animation: scan 3.2s var(--ease-out-expo) infinite; }
 }
 
@@ -226,9 +250,7 @@
    KEYFRAMES
    ============================================================ */
 
-@keyframes shimmer {
-  to { background-position: 250% center; }
-}
+@keyframes shimmer { to { background-position: 250% center } }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) }
@@ -236,8 +258,8 @@
 }
 
 @keyframes pulse-gold {
-  0%, 100% { opacity: 0.5; transform: scale(1) }
-  50%      { opacity: 1;   transform: scale(1.06) }
+  0%, 100% { opacity: 0.45; transform: scale(1) }
+  50%      { opacity: 0.9;  transform: scale(1.06) }
 }
 
 @keyframes marquee {
@@ -250,20 +272,23 @@
   to   { transform: rotate(360deg) }
 }
 
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg) }
+  to   { transform: rotate(0deg) }
+}
+
 @keyframes scan {
-  0%       { transform: translateY(-100%); opacity: 0 }
-  35%      { opacity: 1 }
-  100%     { transform: translateY(320%); opacity: 0 }
+  0%   { transform: translateY(-100%); opacity: 0 }
+  35%  { opacity: 1 }
+  100% { transform: translateY(320%); opacity: 0 }
 }
 
 /* ============================================================
-   ACESSIBILIDADE — respeita quem pediu menos movimento
+   ACESSIBILIDADE
    ============================================================ */
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

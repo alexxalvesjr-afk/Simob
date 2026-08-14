@@ -45,11 +45,11 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="glass inline-flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4"
             >
-              <span className="whitespace-nowrap rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold-200">
+              <span className="whitespace-nowrap rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold-700">
                 Salvador · BA
               </span>
-              <span className="flex items-center gap-1 whitespace-nowrap text-xs text-cream-200/80">
-                <Star size={12} className="shrink-0 fill-gold-400 text-gold-400" />
+              <span className="flex items-center gap-1 whitespace-nowrap text-xs text-ink-600">
+                <Star size={12} className="shrink-0 fill-gold-400 text-gold-600" />
                 Credenciado DETRAN-BA
                 <span className="hidden sm:inline">&nbsp;há mais de 10 anos</span>
               </span>
@@ -59,7 +59,7 @@ export default function Hero() {
             <motion.h1
               variants={surgir}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-7 text-[2.6rem] font-bold leading-[1.03] tracking-[-0.035em] text-cream-50 sm:text-6xl lg:text-[4.1rem]"
+              className="mt-7 text-[2.6rem] font-bold leading-[1.03] tracking-[-0.035em] text-ink-900 sm:text-6xl lg:text-[4.1rem]"
             >
               Sua tranquilidade começa quando a{" "}
               <span className="text-gold-shimmer">burocracia acaba.</span>
@@ -69,12 +69,12 @@ export default function Hero() {
             <motion.p
               variants={surgir}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-cream-300/80 sm:text-xl"
+              className="mt-6 max-w-xl text-lg leading-relaxed text-ink-500 sm:text-xl"
             >
               Documentação, capacitação, consultoria, leilões e saúde mental para
               o setor automotivo. Cinco verticais, um só grupo — e um time que
               resolve o seu processo{" "}
-              <strong className="font-semibold text-cream-50">em até 48 horas</strong>,
+              <strong className="font-semibold text-ink-900">em até 48 horas</strong>,
               sem você pisar no DETRAN.
             </motion.p>
 
@@ -99,7 +99,7 @@ export default function Hero() {
 
               <a
                 href="#verticais"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-gold-500/30 px-8 py-4 font-semibold text-gold-100 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-gold-600/40 px-8 py-4 font-semibold text-gold-700 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
               >
                 Conhecer o grupo
                 <ArrowRight
@@ -116,7 +116,7 @@ export default function Hero() {
               className="mt-10 flex flex-wrap gap-x-5 gap-y-2.5"
             >
               {credenciais.slice(0, 3).map((c) => (
-                <li key={c} className="flex items-center gap-2 text-sm text-cream-300/60">
+                <li key={c} className="flex items-center gap-2 text-sm text-ink-400">
                   <span className="h-1 w-1 rounded-full bg-gold-500" />
                   {c}
                 </li>

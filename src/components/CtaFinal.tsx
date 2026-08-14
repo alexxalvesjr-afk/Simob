@@ -20,13 +20,13 @@ export default function CtaFinal({
 
       <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-4xl font-bold leading-[1.08] text-cream-50 sm:text-5xl lg:text-[3.5rem]">
+          <h2 className="text-balance text-4xl font-bold leading-[1.08] text-ink-900 sm:text-5xl lg:text-[3.5rem]">
             {titulo}
           </h2>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-cream-300/75">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-500">
             {sub}
           </p>
         </Reveal>
@@ -44,12 +44,12 @@ export default function CtaFinal({
         </Reveal>
 
         <Reveal delay={0.26}>
-          <div className="mt-12 flex flex-col items-center justify-center gap-x-8 gap-y-3 text-sm text-cream-300/55 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-x-8 gap-y-3 text-sm text-ink-400 sm:flex-row">
             <a
               href={empresa.endereco.maps}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors hover:text-gold-300"
+              className="flex items-center gap-2 transition-colors hover:text-gold-600"
             >
               <MapPin size={15} className="text-gold-500" />
               {empresa.endereco.linha1}

@@ -34,7 +34,7 @@ export default function Nav() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "border-b border-gold-500/15 bg-ink-900/85 backdrop-blur-xl"
+            ? "border-b border-ink-900/10 bg-paper backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -53,8 +53,8 @@ export default function Nav() {
                     href={item.href}
                     className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
                       ativo
-                        ? "text-gold-300"
-                        : "text-cream-300 hover:text-cream-50"
+                        ? "text-gold-600"
+                        : "text-ink-500 hover:text-ink-900"
                     }`}
                   >
                     {item.label}
@@ -74,7 +74,7 @@ export default function Nav() {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/gestao"
-              className="flex items-center gap-2 rounded-full border border-gold-500/30 px-4 py-2 text-sm font-medium text-gold-200 transition-all duration-300 hover:border-gold-400/60 hover:bg-gold-500/10"
+              className="flex items-center gap-2 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-medium text-gold-700 transition-all duration-300 hover:border-gold-400/60 hover:bg-gold-500/10"
             >
               <LayoutDashboard size={15} />
               Área do cliente
@@ -94,7 +94,7 @@ export default function Nav() {
           {/* Gatilho mobile */}
           <button
             onClick={() => setAberto((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-500/25 text-gold-200 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 text-gold-700 lg:hidden"
             aria-label={aberto ? "Fechar menu" : "Abrir menu"}
             aria-expanded={aberto}
           >
@@ -110,7 +110,7 @@ export default function Nav() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-ink-900/97 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-paper backdrop-blur-xl lg:hidden"
           >
             <div className="flex h-full flex-col justify-center px-6 pb-16 pt-24">
               <ul className="space-y-1">
@@ -123,13 +123,13 @@ export default function Nav() {
                   >
                     <Link
                       href={item.href}
-                      className="flex items-center justify-between border-b border-gold-500/10 py-4"
+                      className="flex items-center justify-between border-b border-ink-900/8 py-4"
                     >
                       <span>
-                        <span className="block font-display text-2xl font-semibold text-cream-50">
+                        <span className="block font-display text-2xl font-semibold text-ink-900">
                           {item.label}
                         </span>
-                        <span className="text-sm text-cream-300/60">{item.desc}</span>
+                        <span className="text-sm text-ink-400">{item.desc}</span>
                       </span>
                       <ArrowRight size={18} className="text-gold-500" />
                     </Link>

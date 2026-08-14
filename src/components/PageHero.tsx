@@ -37,14 +37,14 @@ export default function PageHero({
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="mt-5 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] text-cream-50 sm:text-6xl lg:text-[4rem]">
+              <h1 className="mt-5 text-[2.5rem] font-bold leading-[1.05] tracking-[-0.035em] text-ink-900 sm:text-6xl lg:text-[4rem]">
                 {titulo}{" "}
                 {destaque && <span className="text-gold-shimmer">{destaque}</span>}
               </h1>
             </Reveal>
 
             <Reveal delay={0.16}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream-300/78 sm:text-xl">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-500 sm:text-xl">
                 {sub}
               </p>
             </Reveal>
