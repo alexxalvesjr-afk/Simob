@@ -45,12 +45,13 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="glass inline-flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4"
             >
-              <span className="rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold-200">
+              <span className="whitespace-nowrap rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold-200">
                 Salvador · BA
               </span>
-              <span className="flex items-center gap-1 text-xs text-cream-200/80">
-                <Star size={12} className="fill-gold-400 text-gold-400" />
-                Credenciado DETRAN-BA há mais de 10 anos
+              <span className="flex items-center gap-1 whitespace-nowrap text-xs text-cream-200/80">
+                <Star size={12} className="shrink-0 fill-gold-400 text-gold-400" />
+                Credenciado DETRAN-BA
+                <span className="hidden sm:inline">&nbsp;há mais de 10 anos</span>
               </span>
             </motion.div>
 
@@ -114,7 +115,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="mt-10 flex flex-wrap gap-x-5 gap-y-2.5"
             >
-              {credenciais.slice(0, 4).map((c) => (
+              {credenciais.slice(0, 3).map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm text-cream-300/60">
                   <span className="h-1 w-1 rounded-full bg-gold-500" />
                   {c}

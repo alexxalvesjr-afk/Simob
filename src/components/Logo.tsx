@@ -18,7 +18,7 @@ export default function Logo({
 
   return (
     <svg
-      viewBox="0 0 200 62"
+      viewBox="0 0 132 58"
       className={className}
       role="img"
       aria-label="Grupo SiMoB"
@@ -34,42 +34,43 @@ export default function Logo({
         </linearGradient>
         <linearGradient id={sid} x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#8a6110" />
-          <stop offset="45%" stopColor="#f2ca63" />
+          <stop offset="40%" stopColor="#f2ca63" />
           <stop offset="100%" stopColor="#d4a017" />
         </linearGradient>
       </defs>
 
-      {/* Arco superior — o "swoosh" que atravessa o topo do logotipo */}
-      <path
-        d="M8 22 C 44 2, 128 -2, 190 14"
-        stroke={`url(#${sid})`}
-        strokeWidth="4.5"
-        strokeLinecap="round"
-      />
-
-      {/* Palavra "Grupo" */}
+      {/* Palavra "Grupo" — assinatura discreta acima do arco */}
       {showGrupo && (
         <text
-          x="10"
-          y="17"
+          x="3"
+          y="10"
           fontFamily="var(--font-sora), system-ui, sans-serif"
-          fontSize="9"
+          fontSize="7.5"
           fontWeight="500"
-          letterSpacing="0.5"
+          letterSpacing="0.4"
           fill="#cfc7b5"
+          opacity="0.75"
         >
           Grupo
         </text>
       )}
 
+      {/* Arco superior — acompanha a largura exata do wordmark */}
+      <path
+        d="M2 21 C 26 12, 88 10, 129 17"
+        stroke={`url(#${sid})`}
+        strokeWidth="3.6"
+        strokeLinecap="round"
+      />
+
       {/* Wordmark SiMoB */}
       <text
-        x="6"
-        y="55"
+        x="1"
+        y="52"
         fontFamily="var(--font-sora), system-ui, sans-serif"
-        fontSize="40"
+        fontSize="38"
         fontWeight="800"
-        letterSpacing="-1.5"
+        letterSpacing="-1.4"
         fill={`url(#${gid})`}
       >
         SiMoB

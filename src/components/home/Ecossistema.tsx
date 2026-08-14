@@ -18,7 +18,8 @@ const icones = [FileText, GraduationCap, Briefcase, Gavel, HeartPulse];
  */
 export default function Ecossistema() {
   const [ativo, setAtivo] = useState(0);
-  const raio = 148;
+  // Raio em % da largura do container — acompanha o anel de 0,72 em qualquer tela.
+  const raio = 36;
   const vertical = verticais[ativo];
 
   return (
@@ -111,37 +112,48 @@ export default function Ecossistema() {
               </span>
             </div>
 
-            {/* Satélites — contra-rotacionam para o ícone ficar sempre de pé */}
+            {/*
+              Satélites em três camadas, de propósito:
+              1) o container gira;
+              2) cada satélite é posicionado por left/top (a rotação da camada 1
+                 não pode disputar a mesma propriedade transform do
+                 posicionamento, senão todos colapsam no centro);
+              3) o botão contra-gira para o ícone ficar sempre de pé.
+            */}
             <div className="absolute inset-0 animate-orbit [animation-duration:34s]">
               {verticais.map((v, i) => {
                 const Icone = icones[i];
                 const angulo = (i / verticais.length) * Math.PI * 2 - Math.PI / 2;
-                const x = Math.cos(angulo) * raio;
-                const y = Math.sin(angulo) * raio;
+                const x = 50 + Math.cos(angulo) * raio;
+                const y = 50 + Math.sin(angulo) * raio;
                 const selecionado = ativo === i;
 
                 return (
-                  <button
+                  <div
                     key={v.id}
-                    onMouseEnter={() => setAtivo(i)}
-                    onFocus={() => setAtivo(i)}
-                    onClick={() => setAtivo(i)}
-                    aria-label={v.nome}
-                    className="absolute left-1/2 top-1/2 animate-orbit [animation-direction:reverse] [animation-duration:34s]"
-                    style={{ transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))` }}
+                    className="absolute -translate-x-1/2 -translate-y-1/2"
+                    style={{ left: `${x}%`, top: `${y}%` }}
                   >
-                    <span
-                      className="flex h-[3.4rem] w-[3.4rem] items-center justify-center rounded-2xl border bg-ink-900 transition-all duration-400"
-                      style={{
-                        borderColor: selecionado ? v.cor : "rgba(212,160,23,0.2)",
-                        color: selecionado ? v.cor : "rgba(207,199,181,0.65)",
-                        boxShadow: selecionado ? `0 0 26px -4px ${v.cor}88` : "none",
-                        transform: selecionado ? "scale(1.14)" : "scale(1)",
-                      }}
+                    <button
+                      onMouseEnter={() => setAtivo(i)}
+                      onFocus={() => setAtivo(i)}
+                      onClick={() => setAtivo(i)}
+                      aria-label={v.nome}
+                      className="block animate-orbit [animation-direction:reverse] [animation-duration:34s]"
                     >
-                      <Icone size={21} />
-                    </span>
-                  </button>
+                      <span
+                        className="flex h-[3.2rem] w-[3.2rem] items-center justify-center rounded-2xl border bg-ink-900 transition-all duration-400 sm:h-[3.6rem] sm:w-[3.6rem]"
+                        style={{
+                          borderColor: selecionado ? v.cor : "rgba(212,160,23,0.22)",
+                          color: selecionado ? v.cor : "rgba(207,199,181,0.6)",
+                          boxShadow: selecionado ? `0 0 30px -4px ${v.cor}99` : "none",
+                          transform: selecionado ? "scale(1.15)" : "scale(1)",
+                        }}
+                      >
+                        <Icone size={21} />
+                      </span>
+                    </button>
+                  </div>
                 );
               })}
             </div>

@@ -174,7 +174,7 @@ export default function PlacaConsole() {
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.1, type: "spring", stiffness: 260, damping: 20 }}
-        className="glass absolute -bottom-5 -left-4 hidden items-center gap-2.5 rounded-2xl px-4 py-3 sm:flex lg:-left-10"
+        className="absolute -bottom-7 -left-3 hidden items-center gap-2.5 rounded-2xl border border-gold-500/30 bg-ink-700 px-4 py-3 shadow-depth sm:flex lg:-left-11"
       >
         <ShieldCheck size={19} className="text-gold-400" />
         <div className="leading-tight">

@@ -62,7 +62,7 @@ export const credenciais = [
 
 export const numeros = [
   { valor: "10", sufixo: "+", label: "anos de estrada", desc: "Desde 2015 regularizando veículos na Bahia" },
-  { valor: "5", sufixo: "mil+", label: "clientes atendidos", desc: "Pessoas físicas, frotas e concessionárias" },
+  { valor: "5", sufixo: " mil+", label: "clientes atendidos", desc: "Pessoas físicas, frotas e concessionárias" },
   { valor: "48", sufixo: "h", label: "prazo médio", desc: "Da solicitação ao documento na sua mão" },
   { valor: "98", sufixo: "%", label: "aprovação na 1ª via", desc: "Processo conferido antes de dar entrada" },
 ] as const;
