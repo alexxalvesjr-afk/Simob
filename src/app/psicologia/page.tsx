@@ -43,7 +43,7 @@ export default function PsicologiaPage() {
           ].map(({ Icone, t, d }, i) => (
             <Reveal key={t} delay={i * 0.09}>
               <div className="h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-accent">
                   <Icone size={19} />
                 </span>
                 <h3 className="mt-5 font-display text-lg font-bold text-ink-900">{t}</h3>

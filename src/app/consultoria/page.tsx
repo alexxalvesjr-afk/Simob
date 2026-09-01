@@ -71,7 +71,7 @@ export default function ConsultoriaPage() {
                   {s.texto}
                 </p>
 
-                <span className="relative mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-500/10 px-3 py-1.5 text-xs font-semibold text-gold-600">
+                <span className="relative mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-gold-500/10 px-3 py-1.5 text-xs font-semibold text-accent">
                   <Clock size={12} /> {s.prazo}
                 </span>
               </a>

@@ -44,7 +44,7 @@ export default function Faq({
                 >
                   <span
                     className={`font-display text-lg font-semibold transition-colors ${
-                      ativo ? "text-gold-700" : "text-ink-900"
+                      ativo ? "text-accent" : "text-ink-900"
                     }`}
                   >
                     {item.p}
@@ -52,7 +52,7 @@ export default function Faq({
                   <motion.span
                     animate={{ rotate: ativo ? 45 : 0 }}
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold-600/30 text-gold-600"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold-600/30 text-accent"
                   >
                     <Plus size={16} />
                   </motion.span>

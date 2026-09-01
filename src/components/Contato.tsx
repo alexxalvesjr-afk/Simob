@@ -158,7 +158,7 @@ export default function Contato() {
               <button
                 type="submit"
                 disabled={enviando}
-                className="group mt-7 flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 py-4 font-semibold text-ink-900 transition-all duration-300 hover:shadow-gold disabled:opacity-60"
+                className="group mt-7 flex w-full items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 py-4 font-semibold text-anchor transition-all duration-300 hover:shadow-gold disabled:opacity-60"
               >
                 {enviando ? "Enviando…" : "Enviar mensagem"}
                 <Send size={17} className="transition-transform duration-300 group-hover:translate-x-0.5" />

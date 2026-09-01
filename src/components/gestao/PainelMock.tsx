@@ -19,7 +19,7 @@ const VEICULOS = [
 
 const tons = {
   ok: { cor: "text-emerald-700", bg: "bg-emerald-500/10", Icone: CircleCheck },
-  alerta: { cor: "text-gold-600", bg: "bg-gold-500/12", Icone: TriangleAlert },
+  alerta: { cor: "text-accent", bg: "bg-gold-500/12", Icone: TriangleAlert },
   andamento: { cor: "text-sky-700", bg: "bg-sky-500/10", Icone: Loader },
 } as const;
 
@@ -51,7 +51,7 @@ export default function PainelMock() {
           <span className="flex-1 truncate rounded-md bg-paper px-3 py-1 text-center text-[0.68rem] text-ink-400">
             gestao.gruposimob.com.br/frota
           </span>
-          <Bell size={14} className="shrink-0 text-gold-600" />
+          <Bell size={14} className="shrink-0 text-accent" />
         </div>
 
         <div className="p-5 sm:p-6">
@@ -101,7 +101,7 @@ export default function PainelMock() {
                   className="flex items-center justify-between gap-3 rounded-xl border border-ink-900/8 bg-paper-2 px-3.5 py-2.5 transition-colors hover:border-gold-600/30"
                 >
                   <span className="flex min-w-0 items-center gap-3">
-                    <span className="shrink-0 rounded-md border border-ink-900/15 bg-white px-2 py-0.5 font-display text-[0.7rem] font-bold tracking-wider text-ink-800">
+                    <span className="shrink-0 rounded-md border border-ink-900/15 bg-white px-2 py-0.5 font-display text-[0.7rem] font-bold tracking-wider text-anchor">
                       {v.placa}
                     </span>
                     <span className="truncate text-sm text-ink-600">{v.modelo}</span>
@@ -126,7 +126,7 @@ export default function PainelMock() {
         transition={{ delay: 1.6, type: "spring", stiffness: 250, damping: 20 }}
         className="absolute -bottom-8 -left-3 hidden w-[16.5rem] items-start gap-3 rounded-2xl border border-gold-600/40 bg-paper-3 px-4 py-3 shadow-depth sm:flex lg:-left-12"
       >
-        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/15 text-gold-600">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/15 text-accent">
           <Bell size={15} />
         </span>
         <div className="leading-tight">

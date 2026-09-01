@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight, LayoutDashboard } from "lucide-react";
 import Logo from "./Logo";
+import ThemeToggle from "./ThemeToggle";
 import { navegacao, whatsappLink } from "@/content/site";
 
 export default function Nav() {
@@ -53,7 +54,7 @@ export default function Nav() {
                     href={item.href}
                     className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
                       ativo
-                        ? "text-gold-600"
+                        ? "text-accent"
                         : "text-ink-500 hover:text-ink-900"
                     }`}
                   >
@@ -72,9 +73,10 @@ export default function Nav() {
           </ul>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
             <Link
               href="/gestao"
-              className="flex items-center gap-2 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-medium text-gold-700 transition-all duration-300 hover:border-gold-400/60 hover:bg-gold-500/10"
+              className="flex items-center gap-2 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-medium text-accent transition-all duration-300 hover:border-gold-400/60 hover:bg-gold-500/10"
             >
               <LayoutDashboard size={15} />
               Área do cliente
@@ -83,7 +85,7 @@ export default function Nav() {
               href={whatsappLink("Olá! Vim pelo site e preciso de ajuda com documentação veicular.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-5 py-2.5 text-sm font-semibold text-ink-900 shadow-gold-sm transition-all duration-300 hover:shadow-gold"
+              className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-5 py-2.5 text-sm font-semibold text-anchor shadow-gold-sm transition-all duration-300 hover:shadow-gold"
             >
               <span className="relative z-10">Falar agora</span>
               <ArrowRight size={15} className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -92,14 +94,17 @@ export default function Nav() {
           </div>
 
           {/* Gatilho mobile */}
-          <button
-            onClick={() => setAberto((v) => !v)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 text-gold-700 lg:hidden"
-            aria-label={aberto ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={aberto}
-          >
-            {aberto ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <button
+              onClick={() => setAberto((v) => !v)}
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 text-accent"
+              aria-label={aberto ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={aberto}
+            >
+              {aberto ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -144,7 +149,7 @@ export default function Nav() {
                 href={whatsappLink("Olá! Vim pelo site do Grupo SiMoB.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 py-4 font-semibold text-ink-900"
+                className="mt-10 flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 py-4 font-semibold text-anchor"
               >
                 Falar no WhatsApp <ArrowRight size={17} />
               </motion.a>

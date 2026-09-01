@@ -65,7 +65,7 @@ export default function PlacaConsole() {
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-gold-500 animate-pulse-gold" />
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-600">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
               Consulta gratuita
             </span>
           </div>
@@ -76,7 +76,7 @@ export default function PlacaConsole() {
 
         {/* Placa padrão Mercosul */}
         <div className="relative mx-auto w-full max-w-[19rem]">
-          <div className="relative overflow-hidden rounded-xl border-[3px] border-ink-400 bg-gradient-to-b from-white to-paper-4 shadow-lg">
+          <div className="relative overflow-hidden rounded-xl border-[3px] border-ink-400 bg-gradient-to-b from-white to-[#e6e1d6] shadow-lg">
             {/* Tarja azul superior */}
             <div className="flex items-center justify-between bg-[#1c3faa] px-2.5 py-1">
               <span className="text-[0.5rem] font-bold text-white/85">MERCOSUL</span>
@@ -86,10 +86,10 @@ export default function PlacaConsole() {
 
             {/* Caracteres */}
             <div className="flex h-[4.2rem] items-center justify-center">
-              <span className="font-display text-[2.6rem] font-bold leading-none tracking-[0.08em] text-ink-800">
+              <span className="font-display text-[2.6rem] font-bold leading-none tracking-[0.08em] text-anchor">
                 {placa || " "}
                 {fase === "repouso" && placa.length < 7 && (
-                  <span className="ml-0.5 inline-block h-9 w-0.5 animate-pulse bg-paper-3 align-middle" />
+                  <span className="ml-0.5 inline-block h-9 w-0.5 animate-pulse bg-anchor align-middle" />
                 )}
               </span>
             </div>
@@ -119,7 +119,7 @@ export default function PlacaConsole() {
           />
           <button
             type="submit"
-            className="flex shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 px-5 font-semibold text-ink-900 transition-transform duration-300 hover:scale-[1.03]"
+            className="flex shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 px-5 font-semibold text-anchor transition-transform duration-300 hover:scale-[1.03]"
           >
             <Search size={17} />
             <span className="hidden sm:inline">Consultar</span>
@@ -147,11 +147,11 @@ export default function PlacaConsole() {
                   className="flex items-center justify-between rounded-xl border border-ink-900/8 bg-paper px-4 py-2.5"
                 >
                   <span className="flex items-center gap-2.5 text-sm text-ink-500">
-                    <Icone size={15} className={ok ? "text-emerald-600" : "text-gold-600"} />
+                    <Icone size={15} className={ok ? "text-emerald-600" : "text-accent"} />
                     {rotulo}
                   </span>
                   <span
-                    className={`text-sm font-semibold ${ok ? "text-emerald-700" : "text-gold-600"}`}
+                    className={`text-sm font-semibold ${ok ? "text-emerald-700" : "text-accent"}`}
                   >
                     {valor}
                   </span>
@@ -176,7 +176,7 @@ export default function PlacaConsole() {
         transition={{ delay: 1.1, type: "spring", stiffness: 260, damping: 20 }}
         className="absolute -bottom-7 -left-3 hidden items-center gap-2.5 rounded-2xl border border-gold-600/40 bg-paper-3 px-4 py-3 shadow-depth sm:flex lg:-left-11"
       >
-        <ShieldCheck size={19} className="text-gold-600" />
+        <ShieldCheck size={19} className="text-accent" />
         <div className="leading-tight">
           <p className="text-sm font-semibold text-ink-900">Resposta em 48h</p>
           <p className="text-[0.7rem] text-ink-400">prazo médio dos processos</p>

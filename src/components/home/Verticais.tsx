@@ -32,7 +32,7 @@ export default function Verticais() {
         <Reveal className="lg:col-span-7">
           <Link
             href={principal.slug}
-            className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.75rem] border border-gold-600/30 bg-gradient-to-br from-ink-700 via-ink-800 to-ink-900 p-8 transition-all duration-500 hover:border-gold-400/50 sm:p-10"
+            className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.75rem] border border-gold-600/30 bg-gradient-to-br from-anchor-3 via-anchor-2 to-anchor p-8 transition-all duration-500 hover:border-gold-400/50 sm:p-10"
           >
             {/* Malha decorativa */}
             <div
@@ -82,7 +82,7 @@ export default function Verticais() {
               </ul>
             </div>
 
-            <span className="relative mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-6 py-3 font-semibold text-ink-900 transition-transform duration-300 group-hover:translate-x-1">
+            <span className="relative mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-6 py-3 font-semibold text-anchor transition-transform duration-300 group-hover:translate-x-1">
               {principal.cta}
               <ArrowUpRight size={17} />
             </span>
@@ -126,7 +126,7 @@ export default function Verticais() {
                     <p className="mt-1.5 text-sm leading-relaxed text-ink-500">
                       {v.descricao}
                     </p>
-                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-600">
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
                       {v.cta}
                       <ArrowUpRight
                         size={14}

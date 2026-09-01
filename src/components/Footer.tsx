@@ -12,7 +12,7 @@ const uteis = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-gold-500/15 bg-ink-900">
+    <footer className="relative border-t border-gold-500/15 bg-anchor">
       <div
         className="pointer-events-none absolute inset-0"
         style={{

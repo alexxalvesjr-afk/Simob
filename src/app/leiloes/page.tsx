@@ -53,7 +53,7 @@ export default function LeiloesPage() {
             return (
               <Reveal key={g.titulo} delay={i * 0.08}>
                 <div className="group h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-accent transition-transform duration-500 group-hover:scale-110">
                     <Icone size={20} />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-bold text-ink-900">
@@ -79,7 +79,7 @@ export default function LeiloesPage() {
 
         <Reveal delay={0.1}>
           <div className="glass mx-auto mt-14 max-w-2xl rounded-2xl p-10 text-center">
-            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-600/30 bg-gold-500/10 text-gold-600">
+            <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-gold-600/30 bg-gold-500/10 text-accent">
               <Gavel size={24} />
             </span>
             <h3 className="mt-6 font-display text-2xl font-bold text-ink-900">
@@ -142,7 +142,7 @@ export default function LeiloesPage() {
                   key={item}
                   className="flex items-center gap-4 rounded-xl border border-ink-900/8 bg-paper px-5 py-4"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/12 font-display text-sm font-bold text-gold-600">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gold-500/12 font-display text-sm font-bold text-accent">
                     {i + 1}
                   </span>
                   <span className="text-ink-700">{item}</span>

@@ -53,11 +53,28 @@ Toda a copy vive em `src/content/`. Trocar telefone, endereço, preços, prazos
 de serviço, cursos ou perguntas do FAQ é edição de um objeto — nenhum componente
 precisa ser tocado.
 
-## Identidade visual
+## Identidade visual e temas
 
-Extraída do perfil [@simob.br](https://instagram.com/simob.br): preto profundo
-(`--color-ink-*`) com o gradiente dourado do logotipo (`--color-gold-*`). Os
-tokens estão no bloco `@theme` de `src/app/globals.css`.
+Extraída do perfil [@simob.br](https://instagram.com/simob.br): preto e ouro.
+Os tokens estão em `src/app/globals.css`.
+
+O site tem **tema escuro e claro**, com alternador no topo. O escuro é o
+padrão; a escolha do visitante fica em `localStorage` e é aplicada por um
+script inline no `<head>` antes da primeira pintura, para a página não piscar.
+Para inverter o padrão, troque `'escuro'` por `'claro'` nas duas ocorrências
+de `SCRIPT_TEMA` em `src/app/layout.tsx`.
+
+Três grupos de tokens sustentam isso:
+
+| Token | Papel |
+|---|---|
+| `paper-*` | superfícies — claras no tema claro, escuras no escuro |
+| `ink-*` | texto — inverte junto com o tema |
+| `anchor-*` | superfícies **sempre escuras** (card do SiMoB DOC, rodapé) |
+| `accent` | ouro de texto legível no tema corrente |
+
+Regra prática ao criar componentes: texto sobre botão dourado ou sobre a placa
+branca usa `text-anchor`, nunca `text-ink-900` — este último inverte e some.
 
 ## Pontos de integração pendentes
 

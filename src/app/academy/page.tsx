@@ -51,7 +51,7 @@ export default function AcademyPage() {
           {pilares.map(({ Icone, titulo, texto }, i) => (
             <Reveal key={titulo} delay={i * 0.08}>
               <div className="group h-full rounded-2xl border border-ink-900/8 bg-paper-2 p-6 transition-all duration-500 hover:border-gold-600/40">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-accent transition-transform duration-500 group-hover:scale-110">
                   <Icone size={19} />
                 </span>
                 <h3 className="mt-5 font-display text-base font-bold text-ink-900">{titulo}</h3>

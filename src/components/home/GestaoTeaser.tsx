@@ -16,7 +16,7 @@ const FROTA = [
 
 const tons = {
   ok: { cor: "text-emerald-700", bg: "bg-emerald-500/10", Icone: CircleCheck },
-  alerta: { cor: "text-gold-600", bg: "bg-gold-500/12", Icone: TriangleAlert },
+  alerta: { cor: "text-accent", bg: "bg-gold-500/12", Icone: TriangleAlert },
   andamento: { cor: "text-sky-700", bg: "bg-sky-500/10", Icone: Loader },
 } as const;
 
@@ -37,7 +37,7 @@ export default function GestaoTeaser() {
         {/* ---- Texto ---- */}
         <div>
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold-600/40 bg-gold-500/10 px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-gold-700">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold-600/40 bg-gold-500/10 px-3.5 py-1.5 text-[0.68rem] font-bold uppercase tracking-wider text-accent">
               Novo · Plataforma
             </span>
           </Reveal>
@@ -62,7 +62,7 @@ export default function GestaoTeaser() {
             <ul className="mt-8 space-y-3.5">
               {gestao.recursos.slice(0, 4).map((r) => (
                 <li key={r.titulo} className="flex gap-3">
-                  <CircleCheck size={19} className="mt-0.5 shrink-0 text-gold-600" />
+                  <CircleCheck size={19} className="mt-0.5 shrink-0 text-accent" />
                   <span>
                     <strong className="font-semibold text-ink-900">{r.titulo}.</strong>{" "}
                     <span className="text-ink-500">{r.texto}</span>
@@ -100,7 +100,7 @@ export default function GestaoTeaser() {
                 <span className="text-xs font-medium text-ink-400">
                   gestao.gruposimob.com.br
                 </span>
-                <Bell size={14} className="text-gold-600" />
+                <Bell size={14} className="text-accent" />
               </div>
 
               <div className="p-5">
@@ -144,7 +144,7 @@ export default function GestaoTeaser() {
                         className="flex items-center justify-between rounded-xl border border-ink-900/8 bg-paper-2 px-3.5 py-2.5"
                       >
                         <span className="flex items-center gap-3">
-                          <span className="rounded-md border border-ink-900/15 bg-white px-2 py-0.5 font-display text-[0.7rem] font-bold tracking-wider text-ink-800">
+                          <span className="rounded-md border border-ink-900/15 bg-white px-2 py-0.5 font-display text-[0.7rem] font-bold tracking-wider text-anchor">
                             {v.placa}
                           </span>
                           <span className="text-sm text-ink-600">{v.modelo}</span>

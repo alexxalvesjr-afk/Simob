@@ -7,9 +7,9 @@ import { cursos, categoriasCurso } from "@/content/paginas";
 import { whatsappLink } from "@/content/site";
 
 const selos = {
-  "Mais vendido": "bg-gold-500/90 text-ink-900",
-  Novo: "bg-emerald-500/90 text-ink-900",
-  Destaque: "bg-sky-500/90 text-ink-900",
+  "Mais vendido": "bg-gold-500 text-anchor",
+  Novo: "bg-emerald-500 text-anchor",
+  Destaque: "bg-sky-500 text-anchor",
 } as const;
 
 /** Catálogo com busca e filtro por categoria — instantâneo, sem recarregar. */
@@ -58,7 +58,7 @@ export default function Catalogo() {
               key={c}
               onClick={() => setCategoria(c)}
               className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300 ${
-                ativo ? "text-ink-900" : "text-ink-500 hover:text-ink-900"
+                ativo ? "text-anchor" : "text-ink-500 hover:text-ink-900"
               }`}
             >
               {ativo && (
@@ -91,7 +91,7 @@ export default function Catalogo() {
             >
               <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 transition-all duration-400 hover:border-gold-600/40 hover:bg-paper-2">
                 {/* Faixa superior no lugar de foto — vetorial e leve */}
-                <div className="relative h-28 overflow-hidden border-b border-ink-900/8 bg-gradient-to-br from-gold-50 via-paper-3 to-paper-4">
+                <div className="relative h-28 overflow-hidden border-b border-ink-900/8 bg-gradient-to-br from-gold-500/12 via-paper-3 to-paper-4">
                   <div
                     className="absolute inset-0 opacity-70"
                     style={{
@@ -114,7 +114,7 @@ export default function Catalogo() {
                       {c.selo}
                     </span>
                   )}
-                  <span className="absolute bottom-4 left-4 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-gold-600">
+                  <span className="absolute bottom-4 left-4 text-[0.66rem] font-semibold uppercase tracking-[0.16em] text-accent">
                     {c.categoria}
                   </span>
                 </div>
@@ -152,7 +152,7 @@ export default function Catalogo() {
                       href={whatsappLink(`Olá! Quero me matricular no curso: ${c.nome}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-semibold text-gold-700 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-gold-600/40 px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
                     >
                       Matricular
                       <ArrowRight

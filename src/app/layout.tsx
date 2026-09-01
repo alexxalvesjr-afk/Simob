@@ -83,11 +83,33 @@ const jsonLd = {
   sameAs: [empresa.social.instagram, empresa.social.facebook],
 };
 
+/**
+ * Escolhe o tema antes da página pintar.
+ *
+ * O escuro é o padrão da marca (preto-e-ouro do Instagram) e só cede à
+ * escolha explícita do visitante — de propósito não seguimos a preferência
+ * do sistema, senão a maioria dos aparelhos abriria no claro.
+ * Para inverter o padrão, troque 'escuro' por 'claro' nas duas ocorrências.
+ */
+const SCRIPT_TEMA = `(function(){try{var t=localStorage.getItem('simob-tema');if(t!=='claro'&&t!=='escuro'){t='escuro';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','escuro');}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${sora.variable} ${inter.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${sora.variable} ${inter.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/*
+          Aplica o tema antes da primeira pintura. Sem isso a página aparece
+          no tema padrão por um quadro e depois pula para o escolhido.
+          Fica no <head> de propósito: precisa rodar antes do body pintar.
+        */}
+        <script dangerouslySetInnerHTML={{ __html: SCRIPT_TEMA }} />
+      </head>
       <body className="min-h-screen antialiased">
         <script
           type="application/ld+json"
@@ -97,7 +119,7 @@ export default function RootLayout({
         {/* Atalho de teclado para leitores de tela */}
         <a
           href="#conteudo"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold-500 focus:px-4 focus:py-2 focus:font-semibold focus:text-ink-900"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-gold-500 focus:px-4 focus:py-2 focus:font-semibold focus:text-anchor"
         >
           Pular para o conteúdo
         </a>

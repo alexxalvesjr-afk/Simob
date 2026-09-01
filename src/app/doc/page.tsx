@@ -87,7 +87,7 @@ export default function DocPage() {
           {porCategoria().map(([categoria, itens], gi) => (
             <Reveal key={categoria} delay={gi * 0.06}>
               <div>
-                <h3 className="mb-4 flex items-center gap-3 font-display text-sm font-bold uppercase tracking-[0.16em] text-gold-600">
+                <h3 className="mb-4 flex items-center gap-3 font-display text-sm font-bold uppercase tracking-[0.16em] text-accent">
                   {categoria}
                   <span className="h-px flex-1 bg-gradient-to-r from-gold-500/35 to-transparent" />
                 </h3>
@@ -106,7 +106,7 @@ export default function DocPage() {
                         <span className="font-medium leading-snug text-ink-800">
                           {s.nome}
                         </span>
-                        <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-gold-500/10 px-2.5 py-1 text-[0.7rem] font-semibold text-gold-600">
+                        <span className="flex shrink-0 items-center gap-1.5 rounded-full bg-gold-500/10 px-2.5 py-1 text-[0.7rem] font-semibold text-accent">
                           <Clock size={11} />
                           {s.prazo}
                         </span>
@@ -133,7 +133,7 @@ export default function DocPage() {
           {diferenciais.map(({ Icone, titulo, texto }, i) => (
             <Reveal key={titulo} delay={i * 0.08}>
               <div className="group flex h-full gap-5 rounded-2xl border border-ink-900/8 bg-paper p-7 transition-all duration-500 hover:border-gold-600/40">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-accent transition-transform duration-500 group-hover:scale-110">
                   <Icone size={21} />
                 </span>
                 <div>

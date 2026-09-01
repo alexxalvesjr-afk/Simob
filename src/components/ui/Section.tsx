@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 /** Rótulo dourado que antecede os títulos de seção. */
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold-600">
+    <span className="inline-flex items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-accent">
       <span className="h-px w-7 bg-gradient-to-r from-transparent to-gold-500" />
       {children}
     </span>

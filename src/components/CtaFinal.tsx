@@ -49,7 +49,7 @@ export default function CtaFinal({
               href={empresa.endereco.maps}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-colors hover:text-gold-600"
+              className="flex items-center gap-2 transition-colors hover:text-accent"
             >
               <MapPin size={15} className="text-gold-500" />
               {empresa.endereco.linha1}

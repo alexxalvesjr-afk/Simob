@@ -45,11 +45,11 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="glass inline-flex items-center gap-2.5 rounded-full py-1.5 pl-1.5 pr-4"
             >
-              <span className="whitespace-nowrap rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-gold-700">
+              <span className="whitespace-nowrap rounded-full bg-gold-500/20 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-accent">
                 Salvador · BA
               </span>
               <span className="flex items-center gap-1 whitespace-nowrap text-xs text-ink-600">
-                <Star size={12} className="shrink-0 fill-gold-400 text-gold-600" />
+                <Star size={12} className="shrink-0 fill-gold-400 text-accent" />
                 Credenciado DETRAN-BA
                 <span className="hidden sm:inline">&nbsp;há mais de 10 anos</span>
               </span>
@@ -90,7 +90,7 @@ export default function Hero() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 px-8 py-4 font-semibold text-ink-900 shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold-lg"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 px-8 py-4 font-semibold text-anchor shadow-gold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-gold-lg"
               >
                 <MessageCircle size={19} className="relative z-10" />
                 <span className="relative z-10">Resolver meu documento</span>
@@ -99,7 +99,7 @@ export default function Hero() {
 
               <a
                 href="#verticais"
-                className="group inline-flex items-center justify-center gap-2 rounded-full border border-gold-600/40 px-8 py-4 font-semibold text-gold-700 transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
+                className="group inline-flex items-center justify-center gap-2 rounded-full border border-gold-600/40 px-8 py-4 font-semibold text-accent transition-all duration-300 hover:border-gold-400/70 hover:bg-gold-500/10"
               >
                 Conhecer o grupo
                 <ArrowRight

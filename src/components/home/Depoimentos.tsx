@@ -28,7 +28,7 @@ export default function Depoimentos() {
 
               <div className="mb-4 flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <Star key={s} size={14} className="fill-gold-400 text-gold-600" />
+                  <Star key={s} size={14} className="fill-gold-400 text-accent" />
                 ))}
               </div>
 
@@ -37,7 +37,7 @@ export default function Depoimentos() {
               </blockquote>
 
               <figcaption className="mt-6 flex items-center gap-3 border-t border-ink-900/8 pt-5">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-600/30 bg-gold-500/10 font-display text-sm font-bold text-gold-600">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold-600/30 bg-gold-500/10 font-display text-sm font-bold text-accent">
                   {d.autor
                     .split(" ")
                     .slice(0, 2)

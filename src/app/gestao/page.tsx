@@ -110,7 +110,7 @@ export default function GestaoPage() {
               <Reveal key={r.titulo} delay={i * 0.07}>
                 <div className="group relative h-full overflow-hidden rounded-2xl border border-ink-900/8 bg-paper-2 p-7 transition-all duration-500 hover:border-gold-600/40 hover:bg-paper-2">
                   <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gold-500/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-gold-600 transition-transform duration-500 group-hover:scale-110">
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl border border-gold-600/30 bg-gold-500/10 text-accent transition-transform duration-500 group-hover:scale-110">
                     <Icone size={21} />
                   </span>
                   <h3 className="relative mt-6 font-display text-lg font-bold text-ink-900">
@@ -144,12 +144,12 @@ export default function GestaoPage() {
                 <div
                   className={`relative flex h-full flex-col rounded-[1.5rem] p-8 transition-all duration-500 ${
                     destaque
-                      ? "border-2 border-gold-500/60 bg-gradient-to-b from-gold-50 to-paper shadow-gold lg:-translate-y-4"
+                      ? "border-2 border-gold-500/60 bg-paper-2 shadow-gold lg:-translate-y-4"
                       : "border border-ink-900/8 bg-paper hover:border-gold-600/30"
                   }`}
                 >
                   {destaque && (
-                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-4 py-1 text-[0.68rem] font-bold uppercase tracking-wider text-ink-900">
+                    <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-gold-300 to-gold-500 px-4 py-1 text-[0.68rem] font-bold uppercase tracking-wider text-anchor">
                       Mais escolhido
                     </span>
                   )}
@@ -170,14 +170,14 @@ export default function GestaoPage() {
                     <span className="text-ink-400">{plano.periodo}</span>
                   </p>
 
-                  <p className="mt-3 inline-flex w-fit rounded-full bg-gold-500/10 px-3 py-1 text-xs font-semibold text-gold-600">
+                  <p className="mt-3 inline-flex w-fit rounded-full bg-gold-500/10 px-3 py-1 text-xs font-semibold text-accent">
                     {plano.limite}
                   </p>
 
                   <ul className="mt-7 flex-1 space-y-3">
                     {plano.itens.map((item) => (
                       <li key={item} className="flex gap-2.5 text-sm text-ink-600">
-                        <Check size={16} className="mt-0.5 shrink-0 text-gold-600" />
+                        <Check size={16} className="mt-0.5 shrink-0 text-accent" />
                         {item}
                       </li>
                     ))}
