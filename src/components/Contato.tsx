@@ -6,12 +6,16 @@ import { Send, CircleCheck, MessageCircle } from "lucide-react";
 import Section, { SectionHead } from "./ui/Section";
 import Reveal from "./ui/Reveal";
 import { verticais, whatsappLink } from "@/content/site";
+import { useOrigem, etiquetaOrigem } from "@/lib/origem";
 
 /**
  * Formulário de contato.
+ *
  * Sem back-end configurado, o envio abre o WhatsApp já com a mensagem montada —
  * o cliente não perde o contexto e a equipe recebe tudo no canal que já usa.
- * Para trocar por um endpoint real, basta preencher FORM_ENDPOINT.
+ * Para mandar direto ao CRM, preencha FORM_ENDPOINT: os campos vão no corpo
+ * do POST junto da origem (utm_* ou site de referência), que é o que permite
+ * saber se o lead veio do Instagram, do Google ou de uma campanha específica.
  */
 const FORM_ENDPOINT = "";
 
@@ -24,6 +28,7 @@ const rotulo =
 export default function Contato() {
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
+  const origem = useOrigem();
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -37,6 +42,13 @@ export default function Contato() {
     setEnviando(true);
 
     if (FORM_ENDPOINT) {
+      // A origem vai junto para o CRM classificar o lead sem precisar perguntar.
+      if (origem) {
+        dados.append("origem_fonte", origem.fonte);
+        dados.append("origem_midia", origem.midia ?? "");
+        dados.append("origem_campanha", origem.campanha ?? "");
+        dados.append("origem_pagina", origem.pagina);
+      }
       try {
         await fetch(FORM_ENDPOINT, { method: "POST", body: dados });
       } catch {
@@ -44,14 +56,15 @@ export default function Contato() {
       }
     }
 
-    const texto = [
-      `Olá! Sou ${nome}.`,
-      area && `Tenho interesse em: ${area}.`,
-      msg && `\n${msg}`,
-      `\nMeu contato: ${whats}${email ? ` · ${email}` : ""}`,
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const texto =
+      [
+        `Olá! Sou ${nome}.`,
+        area && `Tenho interesse em: ${area}.`,
+        msg && `\n${msg}`,
+        `\nMeu contato: ${whats}${email ? ` · ${email}` : ""}`,
+      ]
+        .filter(Boolean)
+        .join(" ") + etiquetaOrigem(origem);
 
     window.open(whatsappLink(texto), "_blank", "noopener,noreferrer");
     setEnviando(false);

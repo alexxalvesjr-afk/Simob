@@ -189,8 +189,66 @@ export const servicosDoc = [
   { nome: "Isenção PCD / IPI / ICMS", prazo: "20 dias úteis", categoria: "Isenção" },
   { nome: "Emplacamento de veículo elétrico", prazo: "5 dias úteis", categoria: "Emplacamento" },
   { nome: "ATPV-e (intenção de venda)", prazo: "1 dia útil", categoria: "Transferência" },
+  { nome: "Comunicação de venda", prazo: "1 dia útil", categoria: "Transferência" },
+  { nome: "Baixa de gravame", prazo: "5 dias úteis", categoria: "Baixa" },
   { nome: "Gestão documental de frota", prazo: "Contínuo", categoria: "Frota" },
 ] as const;
+
+/**
+ * Explicações dos serviços que o cliente mais pergunta "o que é isso?".
+ * Saíram da reunião: são os dois que o balcão explica todo dia.
+ */
+export const servicosExplicados = [
+  {
+    nome: "Comunicação de venda",
+    oQueE:
+      "É o aviso oficial ao DETRAN de que você vendeu o veículo. A partir da data da venda, multas e infrações deixam de cair no seu nome.",
+    porQue:
+      "O comprador tem até 30 dias para transferir — e enquanto não transferir, tudo que acontecer com o carro é seu problema. A comunicação de venda encerra isso no dia em que você entrega a chave.",
+    urgencia: "Faça no mesmo dia da venda",
+  },
+  {
+    nome: "Baixa de gravame",
+    oQueE:
+      "É a retirada da alienação fiduciária do documento, feita depois que você quita o financiamento do veículo.",
+    porQue:
+      "Enquanto o gravame não é baixado, o carro segue alienado ao banco: aparece restrição no documento, e você não consegue licenciar nem vender. Quitar a dívida não baixa o gravame sozinho.",
+    urgencia: "Faça assim que quitar o financiamento",
+  },
+] as const;
+
+/* ------------------------------------------------------------------ */
+/*  CALENDÁRIO DE LICENCIAMENTO — BAHIA                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * ⚠️ CONFERIR ANTES DE PUBLICAR ⚠️
+ *
+ * Os meses abaixo seguem o padrão histórico do DETRAN-BA (final da placa
+ * define o mês), mas o calendário é republicado todo ano e pode mudar.
+ * Confira em detran.ba.gov.br / sefaz.ba.gov.br e ajuste antes de ir ao ar:
+ * publicar prazo errado faz alguém perder o vencimento.
+ *
+ * O componente já mostra um aviso na tela apontando para a fonte oficial.
+ */
+export const calendarioLicenciamento = {
+  ano: 2026,
+  estado: "Bahia",
+  fonte: "https://www.detran.ba.gov.br",
+  conferido: false,
+  prazos: [
+    { final: "1", mes: "Abril", limite: "30/04" },
+    { final: "2", mes: "Maio", limite: "31/05" },
+    { final: "3", mes: "Junho", limite: "30/06" },
+    { final: "4", mes: "Julho", limite: "31/07" },
+    { final: "5", mes: "Agosto", limite: "31/08" },
+    { final: "6", mes: "Setembro", limite: "30/09" },
+    { final: "7", mes: "Outubro", limite: "31/10" },
+    { final: "8", mes: "Novembro", limite: "30/11" },
+    { final: "9", mes: "Novembro", limite: "30/11" },
+    { final: "0", mes: "Dezembro", limite: "31/12" },
+  ],
+} as const;
 
 /* ------------------------------------------------------------------ */
 /*  COMO FUNCIONA                                                      */
