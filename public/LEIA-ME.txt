@@ -1,0 +1,55 @@
+SITE GRUPO SiMoB — COMO PUBLICAR
+=================================
+
+IMPORTANTE: não abra o index.html com dois cliques.
+
+Se você abrir o arquivo direto do computador, o navegador não consegue
+carregar o CSS (ele procura os arquivos na raiz do seu HD, não na pasta).
+A página aparece branca e sem formatação — parece que o site está no
+"modo claro", mas na verdade está sem estilo nenhum.
+
+Isso é normal em qualquer site moderno. Ele precisa ser SERVIDO.
+
+
+COMO PUBLICAR (30 segundos, grátis)
+-----------------------------------
+1. Acesse: https://app.netlify.com/drop
+2. Arraste este arquivo .zip para a área indicada
+   (ou, se já descompactou, arraste o CONTEÚDO da pasta —
+    o index.html precisa ficar na raiz, não dentro de outra pasta)
+3. Pronto. A Netlify devolve a URL do site no ar.
+
+
+COMO VER NA SUA MÁQUINA ANTES (opcional)
+----------------------------------------
+Descompacte, abra o terminal dentro da pasta e rode:
+
+    npx serve .
+
+Depois acesse http://localhost:3000
+
+
+O QUE ESPERAR
+-------------
+O site abre no TEMA ESCURO (preto e ouro), que é o padrão.
+Há um botão de sol/lua no topo para alternar para o tema claro.
+A escolha fica salva no navegador de quem visita.
+
+
+ANTES DE USAR COMO SITE OFICIAL
+-------------------------------
+Três coisas ainda são provisórias e precisam da sua revisão:
+
+1. DEPOIMENTOS — os quatro textos são exemplos, com nomes fictícios.
+   Substitua por depoimentos reais antes de divulgar.
+
+2. CNPJ NO RODAPÉ — está como 00.000.000/0001-00. Trocar pelo real.
+
+3. CALENDÁRIO DE LICENCIAMENTO — as datas por final de placa são
+   de referência e NÃO foram conferidas na fonte oficial.
+   Confirme em detran.ba.gov.br antes de publicar: prazo errado
+   faz alguém perder o vencimento.
+   O site já exibe um aviso na tela enquanto isso não for feito.
+
+Também são ilustrativas: a consulta de placa (a interface avisa) e os
+números de clientes/anos, que devem bater com os dados reais da empresa.
