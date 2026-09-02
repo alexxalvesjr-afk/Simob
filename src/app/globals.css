@@ -7,20 +7,21 @@
    ============================================================ */
 
 @theme {
-  /* — Papel (superfícies claras) — */
-  --color-paper: #ffffff;
-  --color-paper-2: #faf8f3;
-  --color-paper-3: #f3efe5;
-  --color-paper-4: #e8e2d4;
+  /* — Papel (superfícies) — valores do tema ESCURO, que é o padrão.
+       paper-2 é mais claro que paper para os cartões destacarem. — */
+  --color-paper: #06090f;
+  --color-paper-2: #0d1522;
+  --color-paper-3: #151e30;
+  --color-paper-4: #212c45;
 
-  /* — Tinta (texto e âncoras escuras) — */
-  --color-ink-900: #080c17;
-  --color-ink-800: #101728;
-  --color-ink-700: #26314c;
-  --color-ink-600: #3d4966;
-  --color-ink-500: #5b6580;
-  --color-ink-400: #8b93a6;
-  --color-ink-300: #b4bac7;
+  /* — Tinta (texto) — claro sobre o papel escuro — */
+  --color-ink-900: #f8f6f1;
+  --color-ink-800: #ebe7dd;
+  --color-ink-700: #d6d1c3;
+  --color-ink-600: #bdb8a9;
+  --color-ink-500: #9aa2b3;
+  --color-ink-400: #7d8598;
+  --color-ink-300: #5a6274;
 
   /* — Ouro SiMoB (do logotipo do Instagram) — */
   --color-gold-50: #fdf8e9;
@@ -46,11 +47,11 @@
   --color-anchor-3: #1c2439;
 
   /*
-    Ouro de texto do tema corrente. No claro precisa ser escuro para passar
-    no contraste; no escuro, claro. Os componentes usam `text-accent` e não
-    precisam saber em qual tema estão.
+    Ouro de texto do tema corrente. Os componentes usam `text-accent` e não
+    precisam saber em qual tema estão. Padrão = escuro, então ouro claro;
+    o tema claro troca por um ouro escuro que passa no contraste sobre branco.
   */
-  --color-accent: #8a6110;
+  --color-accent: #f2ca63;
 
   /* — Sinal — */
   --color-signal-whats: #1da851;
@@ -126,20 +127,15 @@
    ============================================================ */
 
 @layer utilities {
-  /*
-    Ouro em texto sobre fundo claro.
-    Faixa escurecida de propósito: o ouro claro (#f2ca63) sobre branco fica
-    em 1,9:1 e some. Este gradiente fica acima de 3:1, o mínimo do WCAG AA
-    para texto grande — e é só em títulos grandes que ele é usado.
-  */
+  /* Ouro em texto sobre o papel escuro (padrão) */
   .text-gold-gradient {
     background: linear-gradient(
       100deg,
-      var(--color-gold-600) 0%,
-      var(--color-gold-500) 28%,
-      var(--color-gold-700) 55%,
-      var(--color-gold-600) 80%,
-      var(--color-gold-500) 100%
+      var(--color-gold-200) 0%,
+      var(--color-gold-400) 32%,
+      var(--color-gold-300) 58%,
+      var(--color-gold-500) 82%,
+      var(--color-gold-200) 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -150,12 +146,12 @@
   .text-gold-shimmer {
     background: linear-gradient(
       100deg,
-      var(--color-gold-700) 0%,
-      var(--color-gold-500) 22%,
-      var(--color-gold-400) 32%,
-      var(--color-gold-600) 45%,
-      var(--color-gold-700) 70%,
-      var(--color-gold-600) 100%
+      var(--color-gold-300) 0%,
+      var(--color-gold-100) 20%,
+      #fffdf5 30%,
+      var(--color-gold-200) 40%,
+      var(--color-gold-500) 70%,
+      var(--color-gold-300) 100%
     );
     background-size: 250% auto;
     -webkit-background-clip: text;
@@ -180,28 +176,28 @@
     color: transparent;
   }
 
-  /* Cartão de vidro claro */
+  /* Vidro sobre papel escuro (padrão) */
   .glass {
-    background: rgb(255 255 255 / 0.78);
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.055), rgb(255 255 255 / 0.015));
     backdrop-filter: blur(16px) saturate(150%);
     -webkit-backdrop-filter: blur(16px) saturate(150%);
-    border: 1px solid rgb(16 23 40 / 0.07);
-    box-shadow: var(--shadow-soft);
+    border: 1px solid rgb(212 160 23 / 0.16);
+    box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.65);
   }
 
   .glass-strong {
-    background: rgb(255 255 255 / 0.92);
+    background: linear-gradient(145deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0.03));
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border: 1px solid rgb(16 23 40 / 0.09);
-    box-shadow: var(--shadow-lift);
+    border: 1px solid rgb(212 160 23 / 0.24);
+    box-shadow: 0 28px 66px -22px rgb(0 0 0 / 0.75);
   }
 
   /* Cartão padrão do site */
   .card {
-    background: var(--color-paper);
-    border: 1px solid rgb(16 23 40 / 0.08);
-    box-shadow: var(--shadow-soft);
+    background: var(--color-paper-2);
+    border: 1px solid rgb(212 160 23 / 0.14);
+    box-shadow: 0 18px 44px -22px rgb(0 0 0 / 0.7);
     transition: box-shadow 0.5s var(--ease-out-expo),
                 border-color 0.4s var(--ease-out-expo),
                 transform 0.4s var(--ease-out-expo);
@@ -212,18 +208,18 @@
     box-shadow: var(--shadow-lift);
   }
 
-  /* Malha de luz dourada do herói, agora sobre papel */
+  /* Malha de luz dourada do herói (padrão escuro) */
   .mesh-gold {
     background-image:
-      radial-gradient(52rem 32rem at 10% -10%, rgb(242 202 99 / 0.28), transparent 62%),
-      radial-gradient(40rem 28rem at 94% 4%, rgb(232 178 60 / 0.20), transparent 60%),
-      radial-gradient(46rem 34rem at 55% 112%, rgb(251 238 203 / 0.55), transparent 62%);
+      radial-gradient(52rem 32rem at 10% -10%, rgb(212 160 23 / 0.20), transparent 62%),
+      radial-gradient(40rem 28rem at 94% 4%, rgb(232 178 60 / 0.13), transparent 60%),
+      radial-gradient(46rem 34rem at 55% 112%, rgb(180 131 15 / 0.16), transparent 62%);
   }
 
   .grid-tech {
     background-image:
-      linear-gradient(rgb(16 23 40 / 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(16 23 40 / 0.045) 1px, transparent 1px);
+      linear-gradient(rgb(212 160 23 / 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(212 160 23 / 0.055) 1px, transparent 1px);
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 78% 58% at 50% 40%, #000 38%, transparent 100%);
     -webkit-mask-image: radial-gradient(ellipse 78% 58% at 50% 40%, #000 38%, transparent 100%);
@@ -234,9 +230,9 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgb(212 160 23 / 0.35) 25%,
-      rgb(212 160 23 / 0.6) 50%,
-      rgb(212 160 23 / 0.35) 75%,
+      rgb(212 160 23 / 0.45) 25%,
+      rgb(242 202 99 / 0.7) 50%,
+      rgb(212 160 23 / 0.45) 75%,
       transparent
     );
   }
@@ -300,40 +296,43 @@
 }
 
 /* ============================================================
-   MODO ESCURO
-   Só os tokens mudam — nenhum componente precisa saber do tema.
-   A escala `paper` vira superfície escura, a `ink` vira texto claro,
-   e o acento dourado sobe para a faixa legível sobre preto.
+   TEMA CLARO (opcional)
+
+   O ESCURO é o padrão e vive nos tokens base acima — sem depender de
+   JavaScript nenhum. Se o script do tema não rodar, o site abre escuro,
+   que é a identidade da marca. O claro é a exceção, ativada só quando o
+   visitante escolhe e o atributo data-theme="claro" é aplicado.
    ============================================================ */
 
-[data-theme="escuro"] {
-  /* Superfícies: paper-2 é mais CLARO que paper para os cartões destacarem */
-  --color-paper: #06090f;
-  --color-paper-2: #0d1522;
-  --color-paper-3: #151e30;
-  --color-paper-4: #212c45;
+[data-theme="claro"] {
+  --color-paper: #ffffff;
+  --color-paper-2: #faf8f3;
+  --color-paper-3: #f3efe5;
+  --color-paper-4: #e8e2d4;
 
-  /* Texto (escala invertida) */
-  --color-ink-900: #f8f6f1;
-  --color-ink-800: #ebe7dd;
-  --color-ink-700: #d6d1c3;
-  --color-ink-600: #bdb8a9;
-  --color-ink-500: #9aa2b3;
-  --color-ink-400: #7d8598;
-  --color-ink-300: #5a6274;
+  --color-ink-900: #080c17;
+  --color-ink-800: #101728;
+  --color-ink-700: #26314c;
+  --color-ink-600: #3d4966;
+  --color-ink-500: #5b6580;
+  --color-ink-400: #8b93a6;
+  --color-ink-300: #b4bac7;
 
-  --color-accent: #f2ca63;
+  /*
+    Ouro escurecido: o tom claro do logotipo (#f2ca63) sobre branco fica
+    em 1,9:1 e some. Este passa dos 3:1 do WCAG AA para texto grande.
+  */
+  --color-accent: #8a6110;
 }
 
-/* Ouro em texto: sobre preto o tom claro do logotipo volta a funcionar */
-[data-theme="escuro"] .text-gold-gradient {
+[data-theme="claro"] .text-gold-gradient {
   background: linear-gradient(
     100deg,
-    var(--color-gold-200) 0%,
-    var(--color-gold-400) 32%,
-    var(--color-gold-300) 58%,
-    var(--color-gold-500) 82%,
-    var(--color-gold-200) 100%
+    var(--color-gold-600) 0%,
+    var(--color-gold-500) 28%,
+    var(--color-gold-700) 55%,
+    var(--color-gold-600) 80%,
+    var(--color-gold-500) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -341,15 +340,15 @@
   color: transparent;
 }
 
-[data-theme="escuro"] .text-gold-shimmer {
+[data-theme="claro"] .text-gold-shimmer {
   background: linear-gradient(
     100deg,
-    var(--color-gold-300) 0%,
-    var(--color-gold-100) 20%,
-    #fffdf5 30%,
-    var(--color-gold-200) 40%,
-    var(--color-gold-500) 70%,
-    var(--color-gold-300) 100%
+    var(--color-gold-700) 0%,
+    var(--color-gold-500) 22%,
+    var(--color-gold-400) 32%,
+    var(--color-gold-600) 45%,
+    var(--color-gold-700) 70%,
+    var(--color-gold-600) 100%
   );
   background-size: 250% auto;
   -webkit-background-clip: text;
@@ -357,72 +356,76 @@
   color: transparent;
 }
 
-/* Vidro e cartões invertem a base */
-[data-theme="escuro"] .glass {
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.055), rgb(255 255 255 / 0.015));
-  border-color: rgb(212 160 23 / 0.16);
-  box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.65);
+[data-theme="claro"] .glass {
+  background: rgb(255 255 255 / 0.78);
+  border-color: rgb(16 23 40 / 0.07);
+  box-shadow: var(--shadow-soft);
 }
 
-[data-theme="escuro"] .glass-strong {
-  background: linear-gradient(145deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0.03));
-  border-color: rgb(212 160 23 / 0.24);
-  box-shadow: 0 28px 66px -22px rgb(0 0 0 / 0.75);
+[data-theme="claro"] .glass-strong {
+  background: rgb(255 255 255 / 0.92);
+  border-color: rgb(16 23 40 / 0.09);
+  box-shadow: var(--shadow-lift);
 }
 
-[data-theme="escuro"] .card {
-  background: var(--color-paper-2);
-  border-color: rgb(212 160 23 / 0.14);
-  box-shadow: 0 18px 44px -22px rgb(0 0 0 / 0.7);
+[data-theme="claro"] .card {
+  background: var(--color-paper);
+  border-color: rgb(16 23 40 / 0.08);
+  box-shadow: var(--shadow-soft);
 }
 
-[data-theme="escuro"] .card:hover {
+[data-theme="claro"] .card:hover {
   border-color: rgb(212 160 23 / 0.42);
+  box-shadow: var(--shadow-lift);
 }
 
-/* Atmosferas */
-[data-theme="escuro"] .mesh-gold {
+[data-theme="claro"] .mesh-gold {
   background-image:
-    radial-gradient(52rem 32rem at 10% -10%, rgb(212 160 23 / 0.20), transparent 62%),
-    radial-gradient(40rem 28rem at 94% 4%, rgb(232 178 60 / 0.13), transparent 60%),
-    radial-gradient(46rem 34rem at 55% 112%, rgb(180 131 15 / 0.16), transparent 62%);
+    radial-gradient(52rem 32rem at 10% -10%, rgb(242 202 99 / 0.28), transparent 62%),
+    radial-gradient(40rem 28rem at 94% 4%, rgb(232 178 60 / 0.20), transparent 60%),
+    radial-gradient(46rem 34rem at 55% 112%, rgb(251 238 203 / 0.55), transparent 62%);
 }
 
-[data-theme="escuro"] .grid-tech {
+[data-theme="claro"] .grid-tech {
   background-image:
-    linear-gradient(rgb(212 160 23 / 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(212 160 23 / 0.055) 1px, transparent 1px);
+    linear-gradient(rgb(16 23 40 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(16 23 40 / 0.045) 1px, transparent 1px);
 }
 
-[data-theme="escuro"] .hairline {
+[data-theme="claro"] .hairline {
   background: linear-gradient(
     90deg,
     transparent,
-    rgb(212 160 23 / 0.45) 25%,
-    rgb(242 202 99 / 0.7) 50%,
-    rgb(212 160 23 / 0.45) 75%,
+    rgb(212 160 23 / 0.35) 25%,
+    rgb(212 160 23 / 0.6) 50%,
+    rgb(212 160 23 / 0.35) 75%,
     transparent
   );
 }
 
 /*
-  Cores de status. Os tons 600/700 são calibrados para fundo branco; sobre
-  preto ficam abaixo de 3:1. Aqui sobem para a faixa clara equivalente.
+  Cores de status. Os tons 600/700 do Tailwind são calibrados para fundo
+  branco e ficam abaixo de 3:1 sobre preto — no padrão escuro sobem para a
+  faixa clara, e o tema claro devolve o valor original.
 */
-[data-theme="escuro"] .text-emerald-700 { color: #6ee7b7; }
-[data-theme="escuro"] .text-emerald-600 { color: #34d399; }
-[data-theme="escuro"] .text-sky-700 { color: #7dd3fc; }
-[data-theme="escuro"] .text-purple-700 { color: #d8b4fe; }
+.text-emerald-700 { color: #6ee7b7; }
+.text-emerald-600 { color: #34d399; }
+.text-sky-700 { color: #7dd3fc; }
+.text-purple-700 { color: #d8b4fe; }
 
-[data-theme="escuro"] ::selection {
+[data-theme="claro"] .text-emerald-700 { color: #047857; }
+[data-theme="claro"] .text-emerald-600 { color: #059669; }
+[data-theme="claro"] .text-sky-700 { color: #0369a1; }
+[data-theme="claro"] .text-purple-700 { color: #7e22ce; }
+
+::selection {
   background: var(--color-gold-500);
   color: var(--color-anchor);
 }
 
-[data-theme="escuro"] ::-webkit-scrollbar-track { background: var(--color-paper-2); }
-[data-theme="escuro"] ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--color-gold-700), var(--color-gold-500));
-  border-color: var(--color-paper-2);
+[data-theme="claro"] ::selection {
+  background: var(--color-gold-300);
+  color: var(--color-ink-900);
 }
 
 /* ============================================================

@@ -27,7 +27,14 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
   function alternar() {
     const novo: Tema = tema === "escuro" ? "claro" : "escuro";
     setTema(novo);
-    document.documentElement.setAttribute("data-theme", novo);
+
+    // O escuro é o padrão do CSS: para voltar a ele basta remover o atributo.
+    if (novo === "claro") {
+      document.documentElement.setAttribute("data-theme", "claro");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+
     try {
       localStorage.setItem(CHAVE_TEMA, novo);
     } catch {

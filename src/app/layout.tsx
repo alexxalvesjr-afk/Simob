@@ -84,14 +84,14 @@ const jsonLd = {
 };
 
 /**
- * Escolhe o tema antes da página pintar.
+ * Aplica a escolha de tema do visitante antes da página pintar.
  *
- * O escuro é o padrão da marca (preto-e-ouro do Instagram) e só cede à
- * escolha explícita do visitante — de propósito não seguimos a preferência
- * do sistema, senão a maioria dos aparelhos abriria no claro.
- * Para inverter o padrão, troque 'escuro' por 'claro' nas duas ocorrências.
+ * O padrão ESCURO não depende deste script: ele é o valor dos tokens no
+ * CSS. Se o script falhar, for bloqueado ou nem rodar, o site abre escuro
+ * do mesmo jeito — a identidade da marca nunca fica refém do JavaScript.
+ * Aqui só marcamos data-theme="claro" quando a pessoa escolheu o claro.
  */
-const SCRIPT_TEMA = `(function(){try{var t=localStorage.getItem('simob-tema');if(t!=='claro'&&t!=='escuro'){t='escuro';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','escuro');}})();`;
+const SCRIPT_TEMA = `(function(){try{if(localStorage.getItem('simob-tema')==='claro'){document.documentElement.setAttribute('data-theme','claro');}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
@@ -104,11 +104,20 @@ export default function RootLayout({
     >
       <head>
         {/*
-          Aplica o tema antes da primeira pintura. Sem isso a página aparece
-          no tema padrão por um quadro e depois pula para o escolhido.
-          Fica no <head> de propósito: precisa rodar antes do body pintar.
+          Aplica a escolha de tema antes da primeira pintura, para a página
+          não piscar. Fica no <head> de propósito: precisa rodar antes do
+          body pintar. O padrão escuro não depende dele.
         */}
         <script dangerouslySetInnerHTML={{ __html: SCRIPT_TEMA }} />
+
+        {/*
+          Sem JavaScript, as animações de entrada nunca disparam e o conteúdo
+          fica preso no estado inicial (invisível). Isto revela tudo — vale
+          para quem desativa scripts e para rastreadores que não executam JS.
+        */}
+        <noscript>
+          <style>{`[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important;transform:none!important;filter:none!important}`}</style>
+        </noscript>
       </head>
       <body className="min-h-screen antialiased">
         <script
